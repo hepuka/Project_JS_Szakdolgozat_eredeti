@@ -16,10 +16,10 @@ route.get('/login', (req,res) => res.render('login'));
 route.get('/tables', ensureAuthenticated, (req,res) => res.render('tables', {
 
 }));
-
-route.get('/admin', services.homeRoutes);
-route.get('/add-user', services.add_user)
-route.get('/update-user', services.update_user)
+     //localhost:3000 utáni címrész
+route.get('/admin', ensureAuthenticated, services.homeRoutes);
+route.get('/add-user', ensureAuthenticated, services.add_user)
+route.get('/update-user', ensureAuthenticated, services.update_user)
 
 route.get('/statistics', ensureAuthenticated, admin,(req,res) => res.render('statistics',{
 
@@ -29,8 +29,6 @@ route.get('/income', ensureAuthenticated, admin,(req,res) => res.render('income'
 
 }));
 route.get('/chief', ensureAuthenticated, admin,(req,res) => res.render('chief',{
-}));
-route.get('/dashboard', ensureAuthenticated, (req,res) => res.render('dashboard',{
 }));
 route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
 }));
