@@ -1,10 +1,10 @@
 <% for(var i = 0; i < users.length; i++) { %>
 <tr class="table-dark border-0" style="text-align: center">
-    <td style="padding-top: 25px;"><%= users[i].name %></td>
-    <td style="padding-top: 25px;"><%= users[i].username %></td>
-    <td style="padding-top: 25px;"><%= users[i].email %></td>
-    <td style="padding-top: 25px;"><%= users[i].role %></td>
-    <td>
+    <td style="padding-top: 25px; border: none"><%= users[i].name %></td>
+    <td style="padding-top: 25px; border: none"><%= users[i].username %></td>
+    <td style="padding-top: 25px; border: none"><%= users[i].email %></td>
+    <td style="padding-top: 25px; border: none"><%= users[i].role %></td>
+    <td style="border: none;"> 
         <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update" style="border: none;">
             <span class="btn btn-warning btn-sm">Szerkesztés</span>
         </a>
