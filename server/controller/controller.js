@@ -4,20 +4,19 @@ const bcrypt=require('bcryptjs');
 
 exports.create = (req,res)=>{
 
-        const {name, role, username, email, password} = req.body;
+        const {name, role, username, email, password, password2} = req.body;
         let errors=[];
     
        
-        if(!name || !role|| !email || !username || !password ) {
+        if(!name || !role|| !email || !username || !password || !password2) {
               
             errors.push({ msg: 'Nincs mindegyik mező kitöltve!'});
         }
     
-        //Check password match
- /*        if(password !== password2){
+         if(password !== password2){
     
             errors.push({ msg: 'Nem egyeznek a megadott jelszavak!'});
-        } */
+        }
     
         
         if(password.length < 5){
@@ -33,7 +32,8 @@ exports.create = (req,res)=>{
                 role,
                 username,
                 email,
-                password                
+                passwor,
+                password2                
             });
     
         }else{
@@ -51,7 +51,8 @@ exports.create = (req,res)=>{
                     role,
                     username,
                     email,
-                    password 
+                    password,
+                    password2 
                 });
                } else{
     
@@ -61,6 +62,7 @@ exports.create = (req,res)=>{
                         username,
                         email,
                         password
+                        
                     });
     
                     bcrypt.genSalt(10, (err, salt) =>
@@ -69,6 +71,7 @@ exports.create = (req,res)=>{
                         
                         
                         newUser.password=hash;
+                    
     
                         newUser.save()
                         .then(user => {
@@ -99,6 +102,7 @@ exports.find = (req, res)=>{
                     res.status(404).send({ message : "Not found user with id "+ id})
                 }else{
                     res.send(data)
+               
                 }
             })
             .catch(err =>{
@@ -109,6 +113,7 @@ exports.find = (req, res)=>{
         Userdb.find()
             .then(user => {
                 res.send(user)
+              
                 
             })
             .catch(err => {
@@ -134,8 +139,13 @@ exports.update = (req, res)=>{
                 res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
             }else{
                 res.send(data)
+                
+
             }
+           
         })
+
+       
         .catch(err =>{
             res.status(500).send({ message : "Error Update user information"})
         })

@@ -28,6 +28,23 @@ route.get('/statistics', ensureAuthenticated, admin,(req,res) => res.render('sta
 route.get('/income', ensureAuthenticated, admin,(req,res) => res.render('income',{
 
 }));
+
+route.get('/table_1', ensureAuthenticated, (req,res) => res.render('table_1',{
+
+}));
+
+route.get('/table_2', ensureAuthenticated, (req,res) => res.render('table_2',{
+
+}));
+
+route.get('/table_3', ensureAuthenticated, (req,res) => res.render('table_3',{
+
+}));
+
+route.get('/table_4', ensureAuthenticated, (req,res) => res.render('table_4',{
+
+}));
+
 route.get('/chief', ensureAuthenticated, admin,(req,res) => res.render('chief',{
 }));
 route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
