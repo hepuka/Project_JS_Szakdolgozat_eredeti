@@ -1,7 +1,7 @@
 const Userdb = require('../model/model');
 const bcrypt=require('bcryptjs');
 
-// create and save new user
+
 exports.create = (req,res)=>{
 /*     // validate request
     if(!req.body){
@@ -34,7 +34,7 @@ exports.create = (req,res)=>{
         const {name, role, username, email, password} = req.body;
         let errors=[];
     
-        //Check required fields
+       
         if(!name || !role|| !email || !username || !password ) {
               
             errors.push({ msg: 'Nincs mindegyik mező kitöltve!'});
@@ -46,7 +46,7 @@ exports.create = (req,res)=>{
             errors.push({ msg: 'Nem egyeznek a megadott jelszavak!'});
         } */
     
-        //Check password length
+        
         if(password.length < 5){
     
             errors.push({ msg: 'A jelszónak legalább 5 karakternek kell lennie!'});
@@ -65,14 +65,14 @@ exports.create = (req,res)=>{
     
         }else{
     
-            //Validation pass
+        
            Userdb.findOne({username: username})
            
            .then(user =>{
                if(user){
-                   //User exists
+                  
                    errors.push({msg: 'Ez a felhasználónév már foglalt!'});
-                   res.render('add-user', {
+                   res.render('add_user', {
                     errors,
                     name,
                     role,
@@ -90,16 +90,13 @@ exports.create = (req,res)=>{
                         password
                     });
     
-    
-                    //Hash password
                     bcrypt.genSalt(10, (err, salt) =>
                     bcrypt.hash(newUser.password, salt, (err,hash) => {
                         if(err) throw err;
                         
-                        //Set password to hashed
+                        
                         newUser.password=hash;
     
-                        //Save user
                         newUser.save()
                         .then(user => {
                             req.flash('success_msg','Sikeres regisztráció, most már bejelentkezhet!');
@@ -117,7 +114,6 @@ exports.create = (req,res)=>{
         
 }
 
-// retrieve and return all users/ retrive and return a single user
 exports.find = (req, res)=>{
 
     if(req.query.id){
@@ -150,7 +146,7 @@ exports.find = (req, res)=>{
     
 }
 
-// Update a new idetified user by user id
+
 exports.update = (req, res)=>{
     if(!req.body){
         return res
@@ -172,7 +168,7 @@ exports.update = (req, res)=>{
         })
 }
 
-// Delete a user with specified user id in the request
+
 exports.delete = (req, res)=>{
     const id = req.params.id;
 

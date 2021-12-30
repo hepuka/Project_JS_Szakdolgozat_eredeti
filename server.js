@@ -14,34 +14,32 @@ dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 8080
 require('./server/config/passport')(passport);
 
-// log requests
+
 app.use(morgan('tiny'));
 
-// mongodb connection
+
 connectDB();
 
-// parse request to body-parser
+
 app.use(bodyparser.urlencoded({ extended : true}))
 
-// set view engine
-app.set("view engine", "ejs")
-//app.set("views", path.resolve(__dirname, "views/ejs"))
 
-//Express Session
+app.set("view engine", "ejs")
+
 app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
   }));
 
-  // Passport middleware
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 
 app.use(flash());
 
-  //Global Vars
+
   app.use((req,res, next) => {
     res.locals.success_msg=req.flash('succes_msg');
     res.locals.error_msg=req.flash('error_msg');
@@ -49,12 +47,12 @@ app.use(flash());
     next();
 });
 
-// load assets
+
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
-// load routers
+
 app.use('/', require('./server/routes/router'))
 app.use('/', require('./server/routes/index'));
 app.use('/users', require('./server/routes/users'));
