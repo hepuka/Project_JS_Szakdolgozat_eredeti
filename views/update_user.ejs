@@ -1,0 +1,55 @@
+
+
+<%- include('include/_header') %>
+
+
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/admin"><i class="fas fa-angle-double-left"></i> Vissza a lekérdezéshez</a>
+           </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6 m-auto">
+              <h1 class="text-center mb-3">
+                Alkalmazott adatainak módosítása
+              </h1>
+            
+        <form method="POST" id="update_user">
+    <div class="new_user">
+        <div class="form-group" style="margin-bottom: 30px;">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <input type="text" name="name" class="form-control" value="<%= user.name %>">
+        </div>
+        <div class="form-group" style="margin-bottom: 30px;">
+            <label for="username" class="text-light">Felhasználónév</label>
+            <input type="text" name="username" class="form-control" value="<%= user.username%>">
+        </div>
+        <div class="form-group" style="margin-bottom: 30px;">
+            <label for="Email" class="text-light">Email</label>
+            <input type="text" name="email" class="form-control" value="<%= user.email%>">
+        </div>
+        <div class="form-group" style="margin-bottom: 30px;">
+            <label for="role" class="text-light">Jogosultság</label>
+            <input type="text" name="role" class="form-control" value="<%= user.role%>">
+        </div>
+        <div class="form-group">
+            <div class="container" style="margin-top: 40px">
+              <div class="row justify-content-center">
+                <button type="submit" class="btn btn-warning col-md-6 update">Mentés</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    
+</form>
+</div>     
+    </div>
+</div>
+</main>
+
+<%- include('include/_footer') %>
+
