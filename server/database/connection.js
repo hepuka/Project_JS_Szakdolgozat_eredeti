@@ -16,5 +16,6 @@ const connectDB = async () => {
         process.exit(1);
     }
 }
+require('../model/italmodel');
 
 module.exports = connectDB

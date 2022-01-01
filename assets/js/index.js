@@ -1,6 +1,6 @@
 
 
-
+//form.ejs-hez tartozik
 $("#add_user").submit(function(event){
     alert("Új felhasználó sikeresen hozzáaadva!");
 })

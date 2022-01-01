@@ -1,26 +1,12 @@
+const { Number } = require('mongoose');
 const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema({
-    name: {
 
-        type:String,
-        required: true
-    },
-    kiszereles: {
-
-        type:String,
-        required: true
-    },
-    ar: {
-        type:Number,
-        required: true
-    },
-    date: {
-
-        type:Date,
-        default: Date.now
-    }
-})
+    name: String,
+    kiszereles:String,
+    price: Number 
+},{collection:'italok'});
 
 const italdb = mongoose.model('italok', schema);
 
