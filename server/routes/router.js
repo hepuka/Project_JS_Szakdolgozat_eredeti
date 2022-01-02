@@ -4,8 +4,8 @@ const services = require('../services/render');
 
 const controller = require('../controller/controller');
 const italcontroller = require('../controller/italcontroller');
-
-
+const kavecontroller = require('../controller/kavecontroller');
+const sutemenyekcontroller = require('../controller/suticontroller');
 
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const admin=require('../config/onlyforadmin');
@@ -20,10 +20,10 @@ route.get('/tables', ensureAuthenticated, (req,res) => res.render('tables', {
 
 
     //localhost:3000 utáni címrész
-route.get('/admin', ensureAuthenticated, services.homeRoutes);
+route.get('/admin', ensureAuthenticated, services.usermindrender);
 route.get('/add-user', ensureAuthenticated, services.add_user)
 route.get('/update-user', ensureAuthenticated, services.update_user)
-route.get('/table_1', ensureAuthenticated, services.italRoutes);
+//route.get('/table_1', ensureAuthenticated, services.italmindrender);
 
 
 route.get('/statistics', ensureAuthenticated, admin,(req,res) => res.render('statistics',{
@@ -51,15 +51,13 @@ route.get('/chief', ensureAuthenticated, admin,(req,res) => res.render('chief',{
 route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
 }));
 
-
-
-
 //APIs
 route.post('/api/users', controller.create);
 route.get('/api/users', controller.find);
 route.put('/api/users/:id', controller.update);
 route.delete('/api/users/:id', controller.delete);
 route.get('/api/italok', italcontroller.find);
-
+route.get('/api/kavek', kavecontroller.find);
+route.get('/api/sutemenyek', sutemenyekcontroller.find);
 
 module.exports = route

@@ -7,7 +7,7 @@
 <div class="container-fluid" style="margin-top: 80px;">
   <div class="row">
     <div class="col-lg-6" style="margin-right: 200px; margin-left: 100px;">
-  <h2 class="text-warning" style="text-align: center;">Termékek</h2>
+  <h2 class="text-warning" style="text-align: center;">Italok</h2>
          <form action="/table_1" method="POST">
             <table class="table table-hover" style="margin-top: 20px">
                 <thead>
@@ -20,11 +20,48 @@
                         <th style="border: none">Rendelés</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <%- include('include/_table1') %>
+                <tbody id="italoktabla">
+                  
                 </tbody>
             </table>
         </form>
+        <h2 class="text-warning" style="text-align: center; margin-top: 40px;">Kávék</h2>
+        <form action="/table_1" method="POST">
+           <table class="table table-hover" style="margin-top: 20px">
+               <thead>
+                   <tr style="text-align: center">
+                       <th style="border: none">Név</th>
+                       <th style="border: none">Kategória</th>
+                       <th style="border: none">Kiszerelés</th>
+                       <th style="border: none">Ár</th>
+                       <th style="border: none">Mennyiség</th>
+                       <th style="border: none">Rendelés</th>
+                   </tr>
+               </thead>
+               <tbody id="kavektabla">
+                
+               </tbody>
+           </table>
+       </form>
+
+       <h2 class="text-warning" style="text-align: center; margin-top: 40px;">Sütemények</h2>
+       <form action="/table_1" method="POST">
+          <table class="table table-hover" style="margin-top: 20px">
+              <thead>
+                  <tr style="text-align: center">
+                      <th style="border: none">Név</th>
+                      <th style="border: none">Kategória</th>
+                      <th style="border: none">Kiszerelés</th>
+                      <th style="border: none">Ár</th>
+                      <th style="border: none">Mennyiség</th>
+                      <th style="border: none">Rendelés</th>
+                  </tr>
+              </thead>
+              <tbody id="sutemenyektabla">
+               
+              </tbody>
+          </table>
+      </form>
           </div>
 
 

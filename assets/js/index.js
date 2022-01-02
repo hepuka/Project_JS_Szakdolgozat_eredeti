@@ -1,3 +1,54 @@
+let italoktabla = document.getElementById("italoktabla")
+let kavektabla = document.getElementById("kavektabla")
+let sutemenyektabla = document.getElementById("sutemenyektabla")
+//táblarenderelés
+
+
+fetch("http://localhost:3000/api/italok")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            italoktabla.append(td_fun(data));
+        })
+    })
+
+
+    fetch("http://localhost:3000/api/kavek")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            kavektabla.append(td_fun(data));
+        })
+    })
+
+    fetch("http://localhost:3000/api/sutemenyek")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            sutemenyektabla.append(td_fun(data));
+        })
+    })
+
+    function td_fun({ name, kategoria, kiszereles, ar}){
+        let td = document.createElement('tr');
+        td.innerHTML = `
+        <td style="padding-top: 25px; border: none">${name}</td>
+        <td style="padding-top: 25px; border: none">${kategoria}</td>
+        <td style="padding-top: 25px; border: none">${kiszereles}</td>
+        <td style="padding-top: 25px; border: none">${ar}</td>
+        `;
+        return td;
+    }
+
+
+
+
+
+
+
 
 
 //form.ejs-hez tartozik

@@ -2,7 +2,7 @@ const axios = require('axios');
 
 
 //itt hívja le a usereket apival, majd rakja a table_1re
-exports.homeRoutes = (req, res) => {
+exports.usermindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/users')
         .then(function(response){
@@ -15,7 +15,7 @@ exports.homeRoutes = (req, res) => {
     
 }
 
-exports.italRoutes = (req, res) => {
+/* exports.italmindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/italok')
         .then(function(response){
@@ -26,7 +26,7 @@ exports.italRoutes = (req, res) => {
         })
 
     
-}
+} */
 
 exports.add_user = (req, res) =>{
     res.render('add_user');
