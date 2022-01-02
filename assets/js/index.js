@@ -35,10 +35,12 @@ fetch("http://localhost:3000/api/italok")
     function td_fun({ name, kategoria, kiszereles, ar}){
         let td = document.createElement('tr');
         td.innerHTML = `
-        <td style="padding-top: 25px; border: none">${name}</td>
-        <td style="padding-top: 25px; border: none">${kategoria}</td>
-        <td style="padding-top: 25px; border: none">${kiszereles}</td>
-        <td style="padding-top: 25px; border: none">${ar}</td>
+        <td style="padding-top: 25px; border: none;text-align:center">${name}</td>
+        <td style="padding-top: 25px; border: none;text-align:center">${kategoria}</td>
+        <td style="padding-top: 25px; border: none;text-align:center"">${kiszereles}</td>
+        <td style="padding-top: 25px; border: none;text-align:center"">${ar}</td>
+        <td style="padding-top: 25px; border: none;text-align:center"">inputmező</td>
+        <td style="padding-top: 25px; border: none;text-align:center"">Hozzáaad gomb</td>
         `;
         return td;
     }

@@ -14,20 +14,20 @@
         <form method="POST" id="update_user">
     <div class="new_user">
         <div class="form-group" style="margin-bottom: 30px;">
-            <label for="name" class="text-light">Name</label>
+            <label for="name" class="text-dark">Name</label>
             <input type="hidden" name="id" value="<%= user._id %>">
             <input type="text" name="name" class="form-control" value="<%= user.name %>">
         </div>
         <div class="form-group" style="margin-bottom: 30px;">
-            <label for="username" class="text-light">Felhasználónév</label>
+            <label for="username" class="text-dark">Felhasználónév</label>
             <input type="text" name="username" class="form-control" value="<%= user.username%>">
         </div>
         <div class="form-group" style="margin-bottom: 30px;">
-            <label for="Email" class="text-light">Email</label>
+            <label for="Email" class="text-dark">Email</label>
             <input type="text" name="email" class="form-control" value="<%= user.email%>">
         </div>
         <div class="form-group" style="margin-bottom: 30px;">
-            <label for="role" class="text-light">Jogosultság</label>
+            <label for="role" class="text-dark">Jogosultság</label>
             <input type="text" name="role" class="form-control" value="<%= user.role%>">
         </div>
         <div class="form-group">
