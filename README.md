@@ -1,3 +1,3 @@
 Szakdolgozat
 
-project indítása. npm start
+project indítása: npm start
