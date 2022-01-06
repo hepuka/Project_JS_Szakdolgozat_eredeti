@@ -1,9 +1,11 @@
 let italoktabla = document.getElementById("italoktabla")
 let kavektabla = document.getElementById("kavektabla")
 let sutemenyektabla = document.getElementById("sutemenyektabla")
-//táblarenderelés
 
+//ha egy osztályhoz generáljuk a tartalmat és nem egy ID-hoz
+let card = document.querySelector(".products");
 
+//terméktábla renderelés
 fetch("http://localhost:3000/api/italok")
     .then(res => res.json())
     .then(json => {
@@ -12,7 +14,6 @@ fetch("http://localhost:3000/api/italok")
             italoktabla.append(td_fun(data));
         })
     })
-
 
     fetch("http://localhost:3000/api/kavek")
     .then(res => res.json())
@@ -28,28 +29,49 @@ fetch("http://localhost:3000/api/italok")
     .then(json => {
         json.map(data => {
            
-            sutemenyektabla.append(td_fun(data));
+            card.append(td_fun(data));
         })
     })
 
-    function td_fun({ name, kategoria, kiszereles, ar}){
-        let td = document.createElement('tr');
-        td.innerHTML = `
-        <td style="padding-top: 25px; border: none;text-align:center">${name}</td>
-        <td style="padding-top: 25px; border: none;text-align:center">${kategoria}</td>
-        <td style="padding-top: 25px; border: none;text-align:center"">${kiszereles}</td>
-        <td style="padding-top: 25px; border: none;text-align:center"">${ar}</td>
-        <td style="padding-top: 25px; border: none;text-align:center"">inputmező</td>
-        <td style="padding-top: 25px; border: none;text-align:center"">Hozzáaad gomb</td>
+/*     function addElement({ name, kiszereles, ar}){
+        let div = document.createElement('div');
+        div.className = "item justify-self-center";
+    
+          
+        div.innerHTML = `
+                
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+  <div class="card-header">${name}</div>
+  <div class="card-body">
+    <h4 class="card-title">Light card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
         `;
-        return td;
+        appendIn.appendChild(div);
+    } */
+ 
+
+
+    function td_fun({ name, kiszereles, ar}){
+        let div = document.createElement('div');
+        div.innerHTML = `
+            
+    <div class="col-lg-3">
+        <div class="card bg-light" style="max-width: 20rem;margin-top:20px">
+            <div class="card-header">Italok</div>
+            <div class="card-body">
+                <h4 class="card-title">${name}</h4>
+                <p class="card-text">${kiszereles}</p>
+                <p class="card-text">Mennyiség</p>
+                <input type="number" class="form-control">
+                <button type="button" class="btn btn-warning" style="margin-top:10px">Hozzáad</button>
+            </div>
+        </div>
+    </div>
+    
+        `;
+        return div;
     }
-
-
-
-
-
-
 
 
 
