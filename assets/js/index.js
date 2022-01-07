@@ -3,7 +3,7 @@ let kavektabla = document.getElementById("kavektabla")
 let sutemenyektabla = document.getElementById("sutemenyektabla")
 
 //ha egy osztályhoz generáljuk a tartalmat és nem egy ID-hoz
-let card = document.querySelector(".products");
+//let card = document.querySelector(".products");
 
 //terméktábla renderelés
 fetch("http://localhost:3000/api/italok")
@@ -29,50 +29,29 @@ fetch("http://localhost:3000/api/italok")
     .then(json => {
         json.map(data => {
            
-            card.append(td_fun(data));
+            sutemenyektabla.append(td_fun(data));
         })
     })
 
-/*     function addElement({ name, kiszereles, ar}){
-        let div = document.createElement('div');
-        div.className = "item justify-self-center";
-    
-          
-        div.innerHTML = `
-                
-<div class="card bg-light mb-3" style="max-width: 20rem;">
-  <div class="card-header">${name}</div>
-  <div class="card-body">
-    <h4 class="card-title">Light card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-        `;
-        appendIn.appendChild(div);
-    } */
- 
-
-
     function td_fun({ name, kiszereles, ar}){
-        let div = document.createElement('div');
-        div.innerHTML = `
-            
-    <div class="col-lg-3">
-        <div class="card bg-light" style="max-width: 20rem;margin-top:20px">
-            <div class="card-header">Italok</div>
-            <div class="card-body">
-                <h4 class="card-title">${name}</h4>
-                <p class="card-text">${kiszereles}</p>
-                <p class="card-text">Mennyiség</p>
-                <input type="number" class="form-control">
-                <button type="button" class="btn btn-warning" style="margin-top:10px">Hozzáad</button>
-            </div>
-        </div>
-    </div>
-    
+        let td = document.createElement('tr');
+        
+        td.innerHTML = `
+        <tr class="table-default border-0" style="text-align: center">
+        <td style="padding-top: 25px; border: none;text-align: center">${name}</td>
+        <td style="padding-top: 25px; border: none;text-align: center">${kiszereles}</td>
+        <td style="padding-top: 25px; border: none;text-align: center">${ar}</td>
+        <td style="padding-top: 17px; border: none;text-align: center"><input type="number" name="mennyiseg" class="form-control" value="">
+        </td>
+        <td style="border: none; padding-top: 15px; padding-left: 35px;"> 
+            <a class="btn border-shadow" style="border: none">
+                <span class="btn btn-warning btn-sm">Hozzáad</span>
+            </a>
+        </td>
+    </tr>
         `;
-        return div;
+        return td;
     }
-
 
 
 //form.ejs-hez tartozik
