@@ -7,6 +7,9 @@ const italcontroller = require('../controller/italcontroller');
 const kavecontroller = require('../controller/kavecontroller');
 const sutemenyekcontroller = require('../controller/suticontroller');
 
+const asztelrendeles1controller = require('../controller/asztelrendeles1controller');
+
+
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const admin=require('../config/onlyforadmin');
 
@@ -59,5 +62,7 @@ route.delete('/api/users/:id', controller.delete);
 route.get('/api/italok', italcontroller.find);
 route.get('/api/kavek', kavecontroller.find);
 route.get('/api/sutemenyek', sutemenyekcontroller.find);
+
+route.get('/api/1.asztal_rendeles', asztelrendeles1controller.find);
 
 module.exports = route

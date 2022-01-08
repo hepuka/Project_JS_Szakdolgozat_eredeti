@@ -1,6 +1,8 @@
 let italoktabla = document.getElementById("italoktabla")
 let kavektabla = document.getElementById("kavektabla")
 let sutemenyektabla = document.getElementById("sutemenyektabla")
+let asztalrendeles1= document.getElementById("asztalrendeles1")
+
 
 //ha egy osztályhoz generáljuk a tartalmat és nem egy ID-hoz
 //let card = document.querySelector(".products");
@@ -33,11 +35,20 @@ fetch("http://localhost:3000/api/italok")
         })
     })
 
+    fetch("http://localhost:3000/api/1.asztal_rendeles")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            asztalrendeles1.append(li_fun(data));
+        })
+    })
+
+
     function td_fun({ name, kiszereles, ar}){
-        let td = document.createElement('tr');
-        
-        td.innerHTML = `
-        <tr class="table-default border-0" style="text-align: center">
+        let tr = document.createElement('tr');
+        tr.innerHTML = `
+        <tr class="table-default border-0 sor" style="text-align: center">
         <td style="padding-top: 25px; border: none;text-align: center">${name}</td>
         <td style="padding-top: 25px; border: none;text-align: center">${kiszereles}</td>
         <td style="padding-top: 25px; border: none;text-align: center">${ar}</td>
@@ -45,19 +56,37 @@ fetch("http://localhost:3000/api/italok")
         </td>
         <td style="border: none; padding-top: 15px; padding-left: 35px;"> 
             <a class="btn border-shadow" style="border: none">
-                <span class="btn btn-warning btn-sm">Hozzáad</span>
+                <span class="btn btn-warning btn-sm id="hozzaad"><i class="fas fa-plus"></i></span>
             </a>
         </td>
     </tr>
         `;
-        return td;
+        return tr;
     }
+
+       
+    function li_fun({ name, kiszereles, ar,mennyiseg}){
+        let li = document.createElement('li');
+        li.innerHTML = `
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+          <h6 class="my-0">${name}</h6>
+          <small>${kiszereles}</small><br>    
+          <small>${mennyiseg} x ${ar} Ft</small>
+        </div>
+        <span>${ar*mennyiseg}</span>
+      </li>
+        `;  
+        return li;
+    }
+    
 
 
 //form.ejs-hez tartozik
 $("#add_user").submit(function(event){
     alert("Új felhasználó sikeresen hozzáaadva!");
 })
+
 
 $("#update_user").submit(function(event){
     event.preventDefault();

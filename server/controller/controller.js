@@ -1,5 +1,6 @@
 const Userdb = require('../model/model');
 const bcrypt=require('bcryptjs');
+const { reset } = require('nodemon');
 
 
 exports.create = (req,res)=>{
@@ -139,7 +140,7 @@ exports.update = (req, res)=>{
                 res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
             }else{
                 res.send(data)
-                
+                              
 
             }
            
