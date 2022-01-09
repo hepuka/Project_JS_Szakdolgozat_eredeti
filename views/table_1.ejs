@@ -3,101 +3,43 @@
 
 <h2 class="mt-5" style="text-align: center">1. asztal rendelésének leadása</h2>
 
-
+<div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
+    <button type="reset" class="btn btn-warning col-md-2" style="margin-bottom: 40px;" onclick="location.href='/table_1_order'">
+      Kosár
+  </button>
+ </div>
 
 <div class="container">
-  <div class="row">
-      <div class="col-lg-6">
-      
-            <h2 class="text-warning" style="margin-top: 50px;">Italok</h2>
-            <table class="table table-hover" style="margin-top: 40px">
-                <thead>
-                    <tr style="text-align: center">
-                        <th style="border: none">Név</th>
-                        <th style="border: none">Kiszerelés</th>
-                        <th style="border: none">Ár</th>
-                        <th class="col-3" style="border: none;">Mennyiség</th>
-                        <th style="border: none">Megrendel</th>
-                    </tr>
-                </thead>
-                <tbody id="italoktabla">
-                  
-                </tbody>
-            </table>
+    <h1 class="text-warning">Italok</h1>
+    <div class="col-lg-12">
+   
+        <div id="italoktabla" class="row">
 
-            <h2 class="text-warning" style="margin-top: 30px;">Kávék</h2>
-            <table class="table table-hover" style="margin-top: 40px">
-                <thead>
-                    <tr style="text-align: center">
-                        <th style="border: none">Név</th>
-                        <th style="border: none">Kiszerelés</th>
-                        <th style="border: none">Ár</th>
-                        <th class="col-2" style="border: none">Mennyiség</th>
-                        <th style="border: none">Megrendel</th>
-                    </tr>
-                </thead>
-                <tbody id="kavektabla">
-                  
-                </tbody>
-            </table>
 
-            <h2 class="text-warning" style="margin-top: 30px;">Sütemények</h2>
-            <table class="table table-hover" style="margin-top: 40px">
-                <thead>
-                    <tr style="text-align: center">
-                        <th style="border: none">Név</th>
-                        <th style="border: none">Kiszerelés</th>
-                        <th style="border: none">Ár</th>
-                        <th class="col-2" style="border: none">Mennyiség</th>
-                        <th style="border: none">Megrendel</th>
-                    </tr>
-                </thead>
-                <tbody id="sutemenyektabla">
-                  
-                </tbody>
-            </table>
-       
-  
         </div>
-        <div class="col-lg-6">
-            <main class="px-3" style="margin-left: 150px;margin-top: 110px">
-                
-                  <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <h2 class="text-warning" style="margin-bottom: 20px;">Rendelés összesítő</h2>
-                  </h4>
-                  <ul class="list-group mb-3" style="list-style-type:none;" id="asztalrendeles1">
 
-                  </ul>
+    </div>
 
-                  <ul class="list-group mb-3" style="list-style-type:none;">
-                    <li class="list-group-item d-flex justify-content-between">
-                      <strong>Összesen (Ft)</strong>
-                      <strong></strong>
-                    </li>
+    <h1 class="text-warning" style="margin-top: 40px;">Kávék</h1>
+    <div class="col-lg-12">
+   
+        <div id="kavektabla" class="row">
 
-                  </ul>
-                  <form class="card p-2">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Azonosító" />
-                      <button type="submit" class="btn btn-warning">Fizetés</button>
-                    </div>
-                  </form>
-                
-              </main>
 
-              <div class="box-nav d-flex justify-content-center" style="margin-top: 80px;margin-left: 150px">
-                <button type="reset" class="btn btn-warning col-md-4" onclick="location.href='/tables'">
-                  Vissza
-              </button>
-             </div>
         </div>
+
+    </div>
+
+    <h1 class="text-warning" style="margin-top: 40px;">Sütemények</h1>
+    <div class="col-lg-12">
+   
+        <div id="sutemenyektabla" class="row">
+
+
+        </div>
+
     </div>
 </div>
-
-
-
-
-
 
 
     <%- include('include/_footer') %>

@@ -1,0 +1,123 @@
+
+  
+  <%- include('include/_headerlog') %>
+
+
+<section class="cart">
+
+<div class="order container max-auto">
+
+  <div class="flex items-center">
+
+      <h1 class="text-warning">Rendelés összesítő</h1>
+
+     
+  </div>
+
+  <div class="order-list">
+
+    <div class="flex items-center">
+
+
+<div class=" flex-1 ml-4">
+      <h1>Limonádé</h1>
+      <span>1.adag</span>
+
+</div>
+
+<div>
+
+        <h6 class="flex-1">Mennyiség:2</h6>
+      <span>200Ft</span>
+</div>
+
+
+    </div>
+    <div class="flex items-center">
+
+
+      <div class=" flex-1 ml-4">
+            <h1>Limonádé</h1>
+            <span>1.adag</span>
+      
+      </div>
+      
+      <div>
+      
+              <h6 class="flex-1">Mennyiség:2</h6>
+            <span>200Ft</span>
+      </div>
+      
+      
+          </div>
+    
+    </div>
+    <hr>
+
+    <div style="text-align: end; padding-top: 10px;">
+      <span style="font-weight: bold;">Végösszeg: </span>
+      <span class="amount text-warning" style="font-weight: bold;margin-left: 10px;">500 Ft</span>
+    
+    </div>
+    <div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
+      <button type="submit" class="btn btn-warning col-md-2">
+        Fizetés
+    </button>
+   </div>
+
+</div>
+
+
+
+
+<!--   <div class="empty-cart" style="margin-top:300px">
+    <div class="container mx-auto text-center">
+    
+    <h1 style="font-weight: bold;">A kosár üres!</h1>
+    </div>
+       <div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
+      <button type="reset" class="btn btn-warning col-md-2" onclick="location.href='/table_1'">
+        Vissza az 1. asztalhoz
+    </button>
+   </div> 
+    </div> -->
+
+</section>
+
+
+
+
+<div class="col-lg-6">
+    <main class="px-3" style="margin-left: 150px;margin-top: 110px">
+        
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="text-warning" style="margin-bottom: 20px;">Rendelés összesítő</h2>
+          </h4>
+          <ul class="list-group mb-3" style="list-style-type:none;" id="asztalrendeles1">
+
+          </ul>
+
+          <ul class="list-group mb-3" style="list-style-type:none;">
+            <li class="list-group-item d-flex justify-content-between">
+              <strong>Összesen (Ft)</strong>
+              <strong></strong>
+            </li>
+
+          </ul>
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Azonosító" />
+              <button type="submit" class="btn btn-warning">Fizetés</button>
+            </div>
+          </form>
+        
+      </main>
+
+      <div class="box-nav d-flex justify-content-center" style="margin-top: 80px;margin-left: 150px">
+        <button type="reset" class="btn btn-warning col-md-4" onclick="location.href='/table_1'">
+          Vissza
+      </button>
+     </div>
+</div>
+
+<%- include('include/_footer') %>

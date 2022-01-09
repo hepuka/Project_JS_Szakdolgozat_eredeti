@@ -37,6 +37,8 @@ route.get('/income', ensureAuthenticated, admin,(req,res) => res.render('income'
 
 route.get('/table_1', ensureAuthenticated, (req,res) => res.render('table_1',{
 }));
+route.get('/table_1_order', ensureAuthenticated, (req,res) => res.render('table_1_order',{
+}));
 route.get('/include/table_1', ensureAuthenticated, (req,res) => res.render('table_1',{
 }));
 route.get('/table_2', ensureAuthenticated, (req,res) => res.render('table_2',{

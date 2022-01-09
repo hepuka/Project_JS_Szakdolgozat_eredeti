@@ -45,7 +45,29 @@ fetch("http://localhost:3000/api/italok")
     })
 
 
-    function td_fun({ name, kiszereles, ar}){
+     function td_fun({ name, kiszereles, ar}){
+        let div = document.createElement('div');
+        div.className="col-lg-3";
+        div.innerHTML = `
+        <div class="card bg-light" style="max-width: 20rem;margin-top:20px">
+        <div class="card-body">
+            <h4 class="card-title">${name}</h4>
+            <p class="card-text">${kiszereles}</p>
+            <p class="card-text">${ar} Ft</p>
+            <p class="card-text">Mennyiség</p>
+            <input type="number" class="form-control">
+            <button type="button" class="btn btn-warning" style="margin-top:10px">Hozzáad</button>
+        </div>
+           
+    </div>
+        `;
+        return div;
+    } 
+
+
+
+
+/*      function td_fun({ name, kiszereles, ar}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
         <tr class="table-default border-0 sor" style="text-align: center">
@@ -62,7 +84,7 @@ fetch("http://localhost:3000/api/italok")
     </tr>
         `;
         return tr;
-    }
+    } */
 
        
     function li_fun({ name, kiszereles, ar,mennyiseg}){
