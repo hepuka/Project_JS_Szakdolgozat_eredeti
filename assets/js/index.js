@@ -49,7 +49,7 @@ fetch("http://localhost:3000/api/italok")
         let div = document.createElement('div');
         div.className="col-lg-3";
         div.innerHTML = `
-        <div class="card bg-light" style="max-width: 17rem;margin-top:20px">
+        <div class="card border-secondary" style="max-width: 17rem; margin-top:20px">
         <div class="card-body">
             <h4 class="card-title">${name}</h4>
             <p class="card-text">${kiszereles}</p>

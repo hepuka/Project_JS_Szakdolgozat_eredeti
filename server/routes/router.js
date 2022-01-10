@@ -39,6 +39,12 @@ route.get('/table_1', ensureAuthenticated, (req,res) => res.render('table_1',{
 }));
 route.get('/table_1_order', ensureAuthenticated, (req,res) => res.render('table_1_order',{
 }));
+route.get('/table_2_order', ensureAuthenticated, (req,res) => res.render('table_2_order',{
+}));
+route.get('/table_3_order', ensureAuthenticated, (req,res) => res.render('table_3_order',{
+}));
+route.get('/table_4_order', ensureAuthenticated, (req,res) => res.render('table_4_order',{
+}));
 route.get('/include/table_1', ensureAuthenticated, (req,res) => res.render('table_1',{
 }));
 route.get('/table_2', ensureAuthenticated, (req,res) => res.render('table_2',{
