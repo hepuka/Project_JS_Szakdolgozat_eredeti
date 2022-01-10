@@ -22,7 +22,7 @@ app.use(bodyparser.urlencoded({ extended : true}))
 
 app.set("view engine", "ejs")
 
-app.use(session({
+ app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true

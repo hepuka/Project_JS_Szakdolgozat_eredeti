@@ -49,14 +49,34 @@ fetch("http://localhost:3000/api/italok")
         let div = document.createElement('div');
         div.className="col-lg-3";
         div.innerHTML = `
-        <div class="card bg-light" style="max-width: 20rem;margin-top:20px">
+        <div class="card bg-light" style="max-width: 17rem;margin-top:20px">
         <div class="card-body">
             <h4 class="card-title">${name}</h4>
             <p class="card-text">${kiszereles}</p>
             <p class="card-text">${ar} Ft</p>
-            <p class="card-text">Mennyiség</p>
-            <input type="number" class="form-control">
-            <button type="button" class="btn btn-warning" style="margin-top:10px">Hozzáad</button>
+
+            <form action="#" method="POST" >
+
+            <div class="form-group">
+            <label for="mennyiseginput" class="form-label card-text">Mennyiség</label>
+            <input 
+              type="number"
+              id="mennyiseginput"
+              name="mennyiseginput"
+              class="form-control"
+         
+            />
+          </div>
+          
+          <div class="container" style="margin-top: 10px">
+          <div class="row justify-content-center">
+
+            <button type="submit" class="btn btn-warning btn-block col-5" style="margin-top:10px">Hozzáad</button>
+            
+          </div>  
+        </div> 
+
+        </form>
         </div>
            
     </div>
