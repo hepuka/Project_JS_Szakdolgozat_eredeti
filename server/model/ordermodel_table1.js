@@ -5,11 +5,12 @@ var schema = new mongoose.Schema({
 
     name: String,
     kiszereles:String,
-    price: Number,
+    egysegar: Number,
     mennyiseg:Number,
     vegosszeg:Number
+
 },{collection:'asztalrendeles1'});
 
-const asztalrendeles1 = mongoose.model('asztalrendeles1', schema);
+const table1db = mongoose.model('asztalrendeles1', schema);
 
-module.exports = asztalrendeles1;
+module.exports = table1db;

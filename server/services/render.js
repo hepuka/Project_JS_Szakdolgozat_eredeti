@@ -15,9 +15,64 @@ exports.usermindrender = (req, res) => {
     
 }
 
+/* exports.italokmindrender = (req, res) => {
+
+    axios.get('http://localhost:3000/api/italok')
+        .then(function(response){
+            res.render('table_1', {italok:response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+
+exports.kavekmindrender = (req, res) => {
+
+    axios.get('http://localhost:3000/api/kavek')
+        .then(function(response){
+            res.render('table_1', { kavek:response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+
+exports.sutemenyekmindrender = (req, res) => {
+
+    axios.get('http://localhost:3000/api/sutemenyek')
+        .then(function(response){
+            res.render('table_1', { sutemenyek : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+ */
+
+
+exports.ordermindrender = (req, res) => {
+
+    axios.get('http://localhost:3000/api/asztalrendeles1')
+        .then(function(response){
+            res.render('table_1_order', { asztalrendeles1 : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+
 exports.add_user = (req, res) =>{
     res.render('add_user');
 }
+
 
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})

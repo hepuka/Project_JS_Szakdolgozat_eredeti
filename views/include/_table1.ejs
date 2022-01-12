@@ -1,8 +1,17 @@
 <% for(var i = 0; i < italok.length; i++) { %>
     <tr class="table-dark border-0" style="text-align: center">
         <td style="padding-top: 25px; border: none"><%= italok[i].name %></td>
-        <td style="padding-top: 25px; border: none"><%= italok[i].kategoria %></td>
         <td style="padding-top: 25px; border: none"><%= italok[i].kiszereles %></td>
         <td style="padding-top: 25px; border: none"><%= italok[i].ar %></td>
+        <td style="padding-top: 25px; border: none">
+        
+        
+        <input type="number">
+        </td>
+        <td style="border: none;"> 
+            <a href="#" class="btn border-shadow" style="border: none;">
+                <span class="btn btn-warning btn-sm">Hozzáad</span>
+            </a>
+        </td>
     </tr>
     <% } %>

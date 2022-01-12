@@ -8,6 +8,6 @@ var schema = new mongoose.Schema({
     price: Number 
 },{collection:'sutemenyek'});
 
-const sutemenyekdb = mongoose.model('sutemenyek', schema);
+const sutidb = mongoose.model('sutemenyek', schema);
 
-module.exports = sutemenyekdb;
+module.exports = sutidb;

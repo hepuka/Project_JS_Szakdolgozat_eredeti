@@ -1,0 +1,67 @@
+<script>
+
+fetch("http://localhost:3000/api/italok")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+
+              
+            italoktabla.append(td_fun(data));
+        })
+    }) 
+
+      fetch("http://localhost:3000/api/kavek")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            kavektabla.append(td_fun(data));
+        })
+    })
+
+
+    fetch("http://localhost:3000/api/sutemenyek")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            sutemenyektabla.append(td_fun(data));
+        })
+    })
+
+
+    function td_fun({ name, kiszereles, ar}){
+        let tr = document.createElement('tr');
+        tr.innerHTML = `
+        <tr class="table-default border-0 sor" style="text-align: center">
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${name}</td>
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${kiszereles}</td>
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${ar}</td>
+        <td class="col-2" style="padding-top: 17px; border: none;text-align: center"><input type="number" name="mennyiseg" class="form-control" value=""></td>
+        <td class="col-2" style="border: none; padding-top: 15px; padding-left: 70px;"> 
+            <a class="btn border-shadow" style="border: none">
+                <span class="btn btn-warning btn-sm" id="hozzaad"><i class="fas fa-plus"></i></span>
+            </a>
+        </td>
+    </tr>
+        `;
+        return tr;
+    }
+   
+
+</script>
+
+
+
+
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"
+></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+<script src="/js/index.js"></script>
+</body>
+</html>

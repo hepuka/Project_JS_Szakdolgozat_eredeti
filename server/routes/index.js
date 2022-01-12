@@ -1,4 +1,4 @@
-const express = require('express');
+/* const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 
@@ -8,4 +8,4 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
-module.exports = router;
+module.exports = router; */

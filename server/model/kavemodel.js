@@ -8,6 +8,6 @@ var schema = new mongoose.Schema({
     price: Number 
 },{collection:'kavek'});
 
-const kavedb = mongoose.model('kavek', schema);
+const kavekdb = mongoose.model('kavek', schema);
 
-module.exports = kavedb;
+module.exports = kavekdb;

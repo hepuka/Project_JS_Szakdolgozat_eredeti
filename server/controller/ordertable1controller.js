@@ -1,11 +1,12 @@
-const kavekdb = require('../model/kavemodel');
+const ordertable1db = require('../model/ordermodel_table1');
+
 
 exports.find = (req, res)=>{
 
     if(req.query.id){
         const id = req.query.id;
 
-        kavekdb.findById(id)
+        ordertable1db.findById(id)
             .then(data =>{
                
                 if(!data){
@@ -20,7 +21,7 @@ exports.find = (req, res)=>{
             })
 
     }else{
-        kavekdb.find()
+        ordertable1db.find()
             .then(user => {
                 res.send(user)
               

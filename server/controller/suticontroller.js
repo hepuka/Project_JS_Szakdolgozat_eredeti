@@ -1,4 +1,4 @@
-const Sutidb = require('../model/sutemenyekmodel');
+const Sutidb = require('../model/sutimodel');
 
 
 exports.find = (req, res)=>{
@@ -10,14 +10,14 @@ exports.find = (req, res)=>{
             .then(data =>{
                
                 if(!data){
-                    res.status(404).send({ message : "Not found user with id "+ id})
+                    res.status(404).send({ message : "Not found id "+ id})
                 }else{
                     res.send(data)
                
                 }
             })
             .catch(err =>{
-                res.status(500).send({ message: "Error retrieving user with id " + id})
+                res.status(500).send({ message: "Error retrieving id " + id})
             })
 
     }else{
@@ -28,7 +28,7 @@ exports.find = (req, res)=>{
                 
             })
             .catch(err => {
-                res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
+                res.status(500).send({ message : err.message || "Error Occurred while retriving information" })
             })
     }
 

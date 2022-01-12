@@ -3,71 +3,64 @@
   <%- include('include/_headerlog') %>
 
 
-<section class="cart">
+  <div class="container">
+    <h1 class="text-warning" style="text-align: center; margin-top: 80px; margin-bottom: 80px;">Rendelés összesítő</h1>
+    <div class="col-lg-9" style="margin-left: 170px;">
+      <form action="/" method="POST">
+        <table id="ordertable" class="table">
+            <thead style="text-align: center;">
+              <tr class="table-default">
+                <th scope="col-2">Név</th>
+                <th scope="col-2">Kiszerelés</th>
+                <th scope="col-2">Egységár</th>
+                <th scope="col-2">Mennyiség</th>
+                <th scope="col-2">Ár (Ft)</th>
+              </tr>
+            </thead>
+          <tbody>
+            <% for(var i = 0; i < asztalrendeles1.length; i++) { %>
+              <tr class="table-default border-0" style="text-align: center">
+                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].name %></td>
+                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].kiszereles %></td>
+                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].egysegar %></td>
+                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].mennyiseg %></td>
+                  <td id="elem" style="padding-top: 25px; border: none"><%= asztalrendeles1[i].egysegar*asztalrendeles1[i].mennyiseg%></td>
+              </tr>
 
-<div class="order container max-auto">
+              <% } %>
+            </tbody>
+          </table>
+        </form>
 
-  <div class="flex items-center">
-
-      <h1 class="text-warning">Rendelés összesítő</h1>
-
-     
-  </div>
-
-  <div class="order-list">
-
-    <div class="flex items-center">
-
-
-<div class=" flex-1 ml-4">
-      <h1>Limonádé</h1>
-      <span>1.adag</span>
-
-</div>
-
-<div>
-
-        <h6 class="flex-1">Mennyiség:2</h6>
-      <span>200Ft</span>
-</div>
-
-
+            
+    <div class="box-nav d-flex justify-content-end" style="padding-top: 10px;">
+      <h4 class="text-warning" style="font-weight: bold;">Végösszeg: </h4>
+         
+         
     </div>
-    <div class="flex items-center">
 
-
-      <div class=" flex-1 ml-4">
-            <h1>Limonádé</h1>
-            <span>1.adag</span>
+    <div class="box-nav d-flex justify-content-end" style="padding-top: 10px;">
       
-      </div>
-      
-      <div>
-      
-              <h6 class="flex-1">Mennyiség:2</h6>
-            <span>200Ft</span>
-      </div>
-      
-      
-          </div>
-    
+         <h3 id="total" class="text-warning" style="font-weight: bold;margin-top: 20px;"></h3>
+         
     </div>
-    <hr>
 
-    <div style="text-align: end; padding-top: 10px;">
-      <span style="font-weight: bold;">Végösszeg: </span>
-      <span class="amount text-warning" style="font-weight: bold;margin-left: 10px;">500 Ft</span>
-    
-    </div>
+
     <div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
-      <button type="submit" class="btn btn-warning col-md-2">
+      <button type="submit" class="btn btn-warning col-md-2" style="margin-bottom: 40px; margin-right: 25px;" onclick="location.href='#'">
         Fizetés
-    </button>
+    </button>    <button type="reset" class="btn btn-secondary col-md-2" style="margin-bottom: 40px; margin-left: 25px;" onclick="location.href='/table_1'">
+      Vissza
+  </button>
    </div>
 
+
+    </div>
+
+
 </div>
 
-
+ 
 
 
 <!--   <div class="empty-cart" style="margin-top:300px">
@@ -81,14 +74,9 @@
     </button>
    </div> 
     </div> -->
-
-</section>
-
-
-
-
+<!-- 
 <div class="col-lg-6">
-    <main class="px-3" style="margin-left: 150px;margin-top: 110px">
+    <main class="px-3" style="margin-left: 150px;margin-top: 110px">  
         
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="text-warning" style="margin-bottom: 20px;">Rendelés összesítő</h2>
@@ -100,7 +88,7 @@
           <ul class="list-group mb-3" style="list-style-type:none;">
             <li class="list-group-item d-flex justify-content-between">
               <strong>Összesen (Ft)</strong>
-              <strong></strong>
+              <strong>1500</strong>
             </li>
 
           </ul>
@@ -118,6 +106,6 @@
           Vissza
       </button>
      </div>
-</div>
+</div> -->
 
-<%- include('include/_footer') %>
+<%- include('include/_footerorder') %>
