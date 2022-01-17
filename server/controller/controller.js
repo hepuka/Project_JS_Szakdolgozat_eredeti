@@ -3,6 +3,10 @@ const bcrypt=require('bcryptjs');
 const { reset } = require('nodemon');
 
 
+
+
+
+
 exports.create = (req,res)=>{
 
         const {name, role, username, email, password, password2} = req.body;
@@ -33,7 +37,7 @@ exports.create = (req,res)=>{
                 role,
                 username,
                 email,
-                passwor,
+                password,
                 password2                
             });
     

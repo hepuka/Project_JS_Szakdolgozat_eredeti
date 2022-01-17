@@ -1,21 +1,31 @@
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script>
 
-fetch("http://localhost:3000/api/italok")
+var products=[];
+var caItems=[];
+var cart_n=document.getElementById('cart_n');
+
+    fetch("http://localhost:3000/api/italok")
     .then(res => res.json())
     .then(json => {
         json.map(data => {
 
               
-            italoktabla.append(td_fun(data));
+            italDIV.append(italdiv_fun(data));
         })
-    }) 
+    })
 
-      fetch("http://localhost:3000/api/kavek")
+
+    fetch("http://localhost:3000/api/kavek")
     .then(res => res.json())
     .then(json => {
         json.map(data => {
            
-            kavektabla.append(td_fun(data));
+            kaveDIV.append(italdiv_fun(data));
         })
     })
 
@@ -25,43 +35,131 @@ fetch("http://localhost:3000/api/italok")
     .then(json => {
         json.map(data => {
            
-            sutemenyektabla.append(td_fun(data));
+            sutiDIV.append(italdiv_fun(data));
         })
     })
 
+    fetch("http://localhost:3000/api/orders")
+    .then(res => res.json())
+    .then(json => {
+        json.map(data => {
+           
+            orderstabla.append(tdorder_fun(data));
+        })
+    })
 
-    function td_fun({ name, kiszereles, ar}){
+  function tdorder_fun({ orderid, vegosszeg, time}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
-        <tr class="table-default border-0 sor" style="text-align: center">
-        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${name}</td>
-        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${kiszereles}</td>
-        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${ar}</td>
-        <td class="col-2" style="padding-top: 17px; border: none;text-align: center"><input type="number" name="mennyiseg" class="form-control" value=""></td>
-        <td class="col-2" style="border: none; padding-top: 15px; padding-left: 70px;"> 
-            <a class="btn border-shadow" style="border: none">
-                <span class="btn btn-warning btn-sm" id="hozzaad"><i class="fas fa-plus"></i></span>
-            </a>
-        </td>
+        <tr class="table-default border-0 selected" style="text-align: center">
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${orderid}</td>
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${vegosszeg} Ft</td>
+        <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${time}</td>
     </tr>
         `;
         return tr;
     }
+
+
+     function italdiv_fun({ name, kiszereles, ar,con}){
+        let div = document.createElement('div');
+        let btn=`btnFruit${con}`;
+        var mennyiseg = document.createElement('mennyiseg');
+        div.className="col-lg-3"
+        div.innerHTML = `
+
+        <div style="text-align:center" class="card mb-3">
+  
+  <div class="card-body">
+    <h5 style="font-weight:bold" class="card-title">${name}</h5>
+    <h6 class="card-subtitle text-muted"></h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Kiszerelés: ${kiszereles}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Egységár: ${ar} Ft</li>
+  </ul>
+  <div class="card-footer text-muted">
+    <div class="d-flex justify-content-center align-items-center">
+
+<div class="btn-group">
+    <button id="${btn}" type="button" onclick="cart('${name}','${ar}','${con}','${btn}')"
+    class="btn btn-sm btn-outline-secondary">Kosárba</button>
+</div>
+
+        </div>
+  </div>
+</div>
+
+             
+        `;
+        return div;
+    }
    
 
+
+    function cart(name,price){
+
+var item={
+    name:name,
+    price:price,
+    
+}
+
+caItems.push(item);
+let storage=JSON.parse(localStorage.getItem("cart"));
+
+if(storage==null){
+
+    products.push(item);
+    localStorage.setItem("cart",JSON.stringify(products));
+
+}else{
+
+    products=JSON.parse(localStorage.getItem("cart"));
+    products.push(item);
+    localStorage.setItem("cart",JSON.stringify(products));
+}
+
+products=JSON.parse(localStorage.getItem("cart"));
+cart_n.innerHTML=`[${products.length}]`;
+
+
+}
+
+
+/*     function novel() {
+    var newScore = document.getElementById("mennyiseg").innerHTML;
+    var value = parseInt(newScore) + 1;
+    document.getElementById("mennyiseg").innerHTML = value;
+
+    if(value!=0){
+
+        $("#csokkent").prop("disabled", false);
+}
+
+};
+
+    function csokkent() {
+    var newScore = document.getElementById("mennyiseg").innerHTML;
+    var value = parseInt(newScore) - 1 ;
+
+    if(value==0){
+
+        $("#csokkent").prop("disabled", true);
+    }
+ 
+    document.getElementById("mennyiseg").innerHTML = value;
+};  */
+
+
 </script>
-
-
-
-
 
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 crossorigin="anonymous"
 ></script>  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
-<script src="/js/index.js"></script>
 </body>
 </html>

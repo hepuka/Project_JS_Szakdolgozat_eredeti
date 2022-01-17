@@ -3,42 +3,62 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
 const path = require('path');
-const connectDB = require('./server/database/connection');
 const app = express();
 const session=require('express-session');
+const sessions=require('express-session');
 const passport = require('passport');
 const flash=require('connect-flash');
 dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 8080
-
-
+require('dotenv').config()
+const eflash=require('express-flash');
+const MongoDbStore=require('connect-mongo');
+const mongoose = require('mongoose');
 require('./server/config/passport')(passport);
 
-app.use(morgan('tiny'));
+const url='mongodb+srv://kavezo:kavezo@cluster0.q7veg.mongodb.net/kavezo?retryWrites=true&w=majority';
+mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:true});
+const connection=mongoose.connection;
 
-connectDB();
+connection.once('open', () =>{
+
+console.log('Database connected!');
+}).catch(err =>{
+  console.log('Connection failed')
+});
+
+
+app.use(morgan('tiny'));
 
 app.use(bodyparser.urlencoded({ extended : true}))
 
 app.set("view engine", "ejs")
 
- app.use(session({
+  app.use(session({
     secret: 'secret',
     resave: true,
     saveUninitialized: true
   }));
+
+  
+   app.use(sessions(
+    {
+      secret: process.env.COOKIE_SECRET,
+      resave: false,
+      store: MongoDbStore.create({ 
+        mongoUrl: url}),
+        saveUninitialized: false,
+        cookie:{maxAge: 1000*60*60*24}    
+    }));
+
+app.use(eflash())
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(flash());
 
-app.use((req,res, next) => {
-    res.locals.success_msg=req.flash('succes_msg');
-    res.locals.error_msg=req.flash('error_msg');
-    res.locals.error=req.flash('error');
-    next();
-});
+app.use(express.json());
 
 app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))

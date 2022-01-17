@@ -1,4 +1,4 @@
-const asztalrendeles1 = require('../model/asztalrendeles1model');
+const Orderdb = require('../model/ordermodel');
 
 
 exports.find = (req, res)=>{
@@ -6,7 +6,7 @@ exports.find = (req, res)=>{
     if(req.query.id){
         const id = req.query.id;
 
-        asztalrendeles1.findById(id)
+        Orderdb.findById(id)
             .then(data =>{
                
                 if(!data){
@@ -21,7 +21,7 @@ exports.find = (req, res)=>{
             })
 
     }else{
-        asztalrendeles1.find()
+        Orderdb.find()
             .then(user => {
                 res.send(user)
               
@@ -34,3 +34,5 @@ exports.find = (req, res)=>{
 
     
 }
+
+

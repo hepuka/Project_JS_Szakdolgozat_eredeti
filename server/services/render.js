@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 //itt hívja le a usereket apival, majd rakja a table_1re
 exports.usermindrender = (req, res) => {
 
@@ -15,7 +14,7 @@ exports.usermindrender = (req, res) => {
     
 }
 
-/* exports.italokmindrender = (req, res) => {
+ exports.italokmindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/italok')
         .then(function(response){
@@ -32,7 +31,7 @@ exports.kavekmindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/kavek')
         .then(function(response){
-            res.render('table_1', { kavek:response.data });
+            res.render('table_2', { kavek:response.data });
         })
         .catch(err =>{
             res.send(err);
@@ -53,14 +52,13 @@ exports.sutemenyekmindrender = (req, res) => {
 
     
 }
- */
 
 
 exports.ordermindrender = (req, res) => {
 
-    axios.get('http://localhost:3000/api/asztalrendeles1')
+    axios.get('http://localhost:3000/api/orders')
         .then(function(response){
-            res.render('table_1_order', { asztalrendeles1 : response.data });
+            res.render('table_2', { orders : response.data });
         })
         .catch(err =>{
             res.send(err);

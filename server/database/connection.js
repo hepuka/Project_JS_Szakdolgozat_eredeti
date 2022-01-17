@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/* const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try{
@@ -18,4 +18,4 @@ const connectDB = async () => {
 }
 require('../model/italmodel');
 
-module.exports = connectDB
+module.exports = connectDB */

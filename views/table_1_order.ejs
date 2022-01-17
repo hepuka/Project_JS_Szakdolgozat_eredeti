@@ -1,111 +1,67 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <title>KUNPAO's CAFE</title>
   
-  <%- include('include/_headerlog') %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/sandstone/bootstrap.min.css"
+    />
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
-
-  <div class="container">
-    <h1 class="text-warning" style="text-align: center; margin-top: 80px; margin-bottom: 80px;">Rendelés összesítő</h1>
-    <div class="col-lg-9" style="margin-left: 170px;">
-      <form action="/" method="POST">
-        <table id="ordertable" class="table">
-            <thead style="text-align: center;">
-              <tr class="table-default">
-                <th scope="col-2">Név</th>
-                <th scope="col-2">Kiszerelés</th>
-                <th scope="col-2">Egységár</th>
-                <th scope="col-2">Mennyiség</th>
-                <th scope="col-2">Ár (Ft)</th>
-              </tr>
-            </thead>
-          <tbody>
-            <% for(var i = 0; i < asztalrendeles1.length; i++) { %>
-              <tr class="table-default border-0" style="text-align: center">
-                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].name %></td>
-                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].kiszereles %></td>
-                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].egysegar %></td>
-                  <td style="padding-top: 25px; border: none"><%= asztalrendeles1[i].mennyiseg %></td>
-                  <td id="elem" style="padding-top: 25px; border: none"><%= asztalrendeles1[i].egysegar*asztalrendeles1[i].mennyiseg%></td>
-              </tr>
-
-              <% } %>
-            </tbody>
-          </table>
-        </form>
-
-            
-    <div class="box-nav d-flex justify-content-end" style="padding-top: 10px;">
-      <h4 class="text-warning" style="font-weight: bold;">Végösszeg: </h4>
-         
-         
-    </div>
-
-    <div class="box-nav d-flex justify-content-end" style="padding-top: 10px;">
-      
-         <h3 id="total" class="text-warning" style="font-weight: bold;margin-top: 20px;"></h3>
-         
-    </div>
-
-
-    <div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
-      <button type="submit" class="btn btn-warning col-md-2" style="margin-bottom: 40px; margin-right: 25px;" onclick="location.href='#'">
-        Fizetés
-    </button>    <button type="reset" class="btn btn-secondary col-md-2" style="margin-bottom: 40px; margin-left: 25px;" onclick="location.href='/table_1'">
-      Vissza
-  </button>
+</head>
+<body>
+  <div class="container" style="margin-top: 100px;margin-bottom: 50px;">
+    <div class="flex items-center border-b border-gray-300 pb-4">
+          <h1 class="font-bold ml-4 text-2xl">Rendelés összesítő (1.asztal)</h1>
    </div>
 
+   <div class="mt-5">
+    <main role="main">
+        <div class="row">
+            <div class="col">
+                <div class="table-responsive-sm">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td scope="col" style="text-align:center">Sorszám</td>
+                                <td scope="col" style="text-align:center">Termék</td>
+                                <td scope="col" style="text-align:center">Mennyiség</td>
+                                <td scope="col" style="text-align:center">Egységár</td>
+                                <td scope="col" style="text-align:center">Műveletek</td>
+                            </tr>
+                        </thead>
+                            <tbody id="table" class="border border-white">
 
-    </div>
-
+                            </tbody>
+                    </table> 
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
 
 </div>
 
- 
+<script src="\js\table_1_order.js"></script>
+
+<!-- <%- include('include/_footer_table1') %> -->
 
 
-<!--   <div class="empty-cart" style="margin-top:300px">
-    <div class="container mx-auto text-center">
-    
-    <h1 style="font-weight: bold;">A kosár üres!</h1>
-    </div>
-       <div class="box-nav d-flex justify-content-center" style="margin-top: 40px;">
-      <button type="reset" class="btn btn-warning col-md-2" onclick="location.href='/table_1'">
-        Vissza az 1. asztalhoz
-    </button>
-   </div> 
-    </div> -->
-<!-- 
-<div class="col-lg-6">
-    <main class="px-3" style="margin-left: 150px;margin-top: 110px">  
-        
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="text-warning" style="margin-bottom: 20px;">Rendelés összesítő</h2>
-          </h4>
-          <ul class="list-group mb-3" style="list-style-type:none;" id="asztalrendeles1">
-
-          </ul>
-
-          <ul class="list-group mb-3" style="list-style-type:none;">
-            <li class="list-group-item d-flex justify-content-between">
-              <strong>Összesen (Ft)</strong>
-              <strong>1500</strong>
-            </li>
-
-          </ul>
-          <form class="card p-2">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Azonosító" />
-              <button type="submit" class="btn btn-warning">Fizetés</button>
-            </div>
-          </form>
-        
-      </main>
-
-      <div class="box-nav d-flex justify-content-center" style="margin-top: 80px;margin-left: 150px">
-        <button type="reset" class="btn btn-warning col-md-4" onclick="location.href='/table_1'">
-          Vissza
-      </button>
-     </div>
-</div> -->
-
-<%- include('include/_footerorder') %>
+<!-- //footer rész -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"
+></script>  
+</body>
+</html>
