@@ -58,7 +58,7 @@ exports.ordermindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/orders')
         .then(function(response){
-            res.render('table_2', { orders : response.data });
+            res.render('orders', { orders : response.data });
         })
         .catch(err =>{
             res.send(err);

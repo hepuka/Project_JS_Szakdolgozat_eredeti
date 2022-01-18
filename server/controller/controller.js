@@ -2,11 +2,6 @@ const Userdb = require('../model/model');
 const bcrypt=require('bcryptjs');
 const { reset } = require('nodemon');
 
-
-
-
-
-
 exports.create = (req,res)=>{
 
         const {name, role, username, email, password, password2} = req.body;

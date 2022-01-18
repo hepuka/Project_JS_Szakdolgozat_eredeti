@@ -8,18 +8,31 @@ var total=0;
 function tableHTML(i){
 
     return `
-            <tr>
+            <tr id="del">
 
                 <td style="text-align:center"> ${i+1} </td>
                 <td style="text-align:center">${products[i].name}</td>
                 <td id="mennyiseg" style="text-align:center">1</td>
                 <td style="text-align:center">${products[i].price} Ft</td>
-                <td style="text-align:center">Rendelés törlése</td>
+                <td style="text-align:center">
+                <input type="button" value="Rendelés törlése" onclick="deleteRow(this)"</td>
 
+                </td>                       
+               
+                
             </tr>
     `;
 }
 //kosár tartalma vége
+
+function deleteRow(row) {
+
+
+
+
+  }
+  
+
 
 //kosár kiürítése
 function clean(){
@@ -129,8 +142,8 @@ function clean(){
 
     products=JSON.parse(localStorage.getItem('cart'));
  // cart_n.innerHTML=`[${products.length}]`;
-})();
 
+})();
 
 
 var form=document.getElementById('form1');

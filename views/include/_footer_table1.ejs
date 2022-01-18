@@ -39,7 +39,7 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
-    fetch("http://localhost:3000/api/orders")
+   fetch("http://localhost:3000/api/orders")
     .then(res => res.json())
     .then(json => {
         json.map(data => {
@@ -48,13 +48,17 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
-  function tdorder_fun({ orderid, vegosszeg, time}){
+  function tdorder_fun({_id,orderid, vegosszeg, time}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
         <tr class="table-default border-0 selected" style="text-align: center">
         <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${orderid}</td>
         <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${vegosszeg} Ft</td>
         <td class="col-2" style="padding-top: 25px; border: none;text-align: center">${time}</td>
+        <td style="text-align:center">                                
+            <a class="btn btn-danger" href="/orders/delete/${_id}">Törlés</a></td>
+        </td></td>
+
     </tr>
         `;
         return tr;

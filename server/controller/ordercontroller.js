@@ -1,6 +1,5 @@
 const Orderdb = require('../model/ordermodel');
 
-
 exports.find = (req, res)=>{
 
     if(req.query.id){
@@ -34,5 +33,3 @@ exports.find = (req, res)=>{
 
     
 }
-
-
