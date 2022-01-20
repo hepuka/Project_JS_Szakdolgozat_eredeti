@@ -8,30 +8,55 @@ var total=0;
 function tableHTML(i){
 
     return `
-            <tr id="del">
-
-                <td style="text-align:center"> ${i+1} </td>
+            <tr>
                 <td style="text-align:center">${products[i].name}</td>
                 <td id="mennyiseg" style="text-align:center">1</td>
                 <td style="text-align:center">${products[i].price} Ft</td>
-                <td style="text-align:center">
-                <input type="button" value="Rendelés törlése" onclick="deleteRow(this)"</td>
-
-                </td>                       
-               
-                
+                <td style="text-align:center"><input id="bem" type="button" value="Rendelés törlése" onclick="deleteRow(this)"</td>
+                </td>                                     
             </tr>
     `;
 }
 //kosár tartalma vége
 
-function deleteRow(row) {
+function deleteRow(btn) {
+
+
+let data = localStorage.getItem('cart');
+
+console.log('data: '+data);
+
+var row = btn.parentNode.parentNode;
+row.parentNode.removeChild(row);
+  
+
+/*        
+          
+    data.splice(row,1); //remove data[i]
+    localStorage.setItem('cart', data);
+    
+    var questions = localStorage.getItem('cart').parseJSON;
+
+
+    console.log(questions);
+   questions.splice(row, 0);
+localStorage.setItem('cart', JSON.stringify(questions)); */
 
 
 
 
   }
   
+/* 
+  function deleteRow(r){
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("dsTable").deleteRow(i);
+
+    let data = localStorage.getItem('cart');
+    data.split(i,1); //remove data[i]
+    localStorage.setItem('cart', data);
+  }
+ */
 
 
 //kosár kiürítése
