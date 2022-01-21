@@ -30,6 +30,7 @@ console.log('data: '+data);
 var row = btn.parentNode.parentNode;
 row.parentNode.removeChild(row);
   
+//localStorage.splice('cart'.split)
 
 /*        
           
