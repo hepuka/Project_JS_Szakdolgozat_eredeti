@@ -10,7 +10,23 @@ const ordertable1controller=require('../controller/ordertable1controller');
 const ordercontroller=require('../controller/ordercontroller');
 const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
 const admin=require('../config/onlyforadmin');
-const { dashboardView } = require('../controller/chifcontr');
+
+const { dashboardView } = require("../controller/dashboardController");
+const { dashboardView2 } = require("../controller/dashboardController");
+const { dashboardViewtables } = require("../controller/dashboardController");
+const { dashboardViewtable_1 } = require("../controller/dashboardController");
+const { dashboardViewtable_2 } = require("../controller/dashboardController");
+const { dashboardViewchief } = require("../controller/dashboardController");
+const { dashboardViewadduser } = require("../controller/dashboardController");
+const { dashboardViewadmin } = require("../controller/dashboardController");
+const { dashboardViewupdateuser } = require("../controller/dashboardController");
+const { dashboardVieworders } = require("../controller/dashboardController");
+const { dashboardViewproducts } = require("../controller/dashboardController");
+const { dashboardViewaddital } = require("../controller/dashboardController");
+const { dashboardViewaddkave } = require("../controller/dashboardController");
+const { dashboardViewaddsuti } = require("../controller/dashboardController");
+
+
 const mongoose=require('mongoose');
 const Order=mongoose.model('Order');
 require("../model/ordermodel_table1");
@@ -18,20 +34,25 @@ require("../model/ordermodel_table1");
 route.get('/', (req,res) => res.render('login',{
 }));
 
-route.get('/tables', ensureAuthenticated, (req,res) => res.render('tables', {
+route.get('/tables', ensureAuthenticated,dashboardViewtables, (req,res) => res.render('tables', {
 }));
 
     //localhost:3000 utáni címrész
-route.get('/admin', ensureAuthenticated, admin, services.usermindrender);
-route.get('/add-user', ensureAuthenticated,services.add_user);
-route.get('/update-user', ensureAuthenticated, services.update_user);
+route.get('/admin', ensureAuthenticated,admin, services.usermindrender,services.dashboardViewupdateuser);
+route.get('/add-user', ensureAuthenticated,dashboardViewadduser, admin, services.add_user);
+route.get('/update-user', ensureAuthenticated, admin, services.update_user, services.dashboardViewupdateuser);
 
-route.get('/table_1', ensureAuthenticated, services.italokmindrender);
-route.get('/orders', ensureAuthenticated, services.ordermindrender);
+route.get('/table_1', ensureAuthenticated, dashboardViewtable_1,services.italokmindrender);
+route.get('/orders', ensureAuthenticated,admin,dashboardVieworders, services.ordermindrender);
 
-route.get('/table_2', ensureAuthenticated, services.kavekmindrender);
-route.get('/table_1', ensureAuthenticated, services.sutemenyekmindrender);
+route.get('/table_2', ensureAuthenticated,dashboardViewtable_2,services.kavekmindrender);
+route.get('/table_1', ensureAuthenticated,services.sutemenyekmindrender);
 
+route.get('/products', ensureAuthenticated,dashboardViewproducts, services.italokmindrenderadmin, services.italokmindrenderadmin, services.sutemenyekmindrenderadmin);
+
+route.get('/add-ital', ensureAuthenticated,dashboardViewaddital, admin, services.add_ital);
+route.get('/add-kave', ensureAuthenticated,dashboardViewaddkave, admin, services.add_kave);
+route.get('/add-suti', ensureAuthenticated,dashboardViewaddsuti, admin, services.add_suti);
 
 route.get('/orders/delete/:id', (req,res) => {
 
@@ -67,33 +88,27 @@ route.get('/orders/delete/:id', (req,res) => {
 
 
 
-route.get('/income', ensureAuthenticated, admin,(req,res) => res.render('income',{
+route.get('/income', ensureAuthenticated,admin,(req,res) => res.render('income',{
 }));
 
-route.get('/table_1_order', ensureAuthenticated, (req,res) => res.render('table_1_order',{
+route.get('/table_1_order', ensureAuthenticated, dashboardView,(req,res) => res.render('table_1_order',{
 }));
 
-route.get('/table_2_order', ensureAuthenticated, (req,res) => res.render('table_2_order',{
+route.get('/table_2_order', ensureAuthenticated, dashboardView2,(req,res) => res.render('table_2_order',{
 }));
 
-
-route.get('/table_2', ensureAuthenticated, (req,res) => res.render('table_2',{
+route.get('/table_2', ensureAuthenticated,(req,res) => res.render('table_2',{
 }));
 
-route.get('/chief', ensureAuthenticated, admin,dashboardView, (req,res) => res.render('chief',{
-
-
-}));
-
-route.get('_headerlog',dashboardView,(req,res) => res.render('headerlog',{
-
-
+route.get('/chief', ensureAuthenticated, dashboardViewchief, admin, (req,res) => res.render('chief',{
 }));
 
 
-route.get('_header',dashboardView,(req,res) => res.render('header',{
+route.get('_headerlog',(req,res) => res.render('headerlog',{
+}));
 
 
+route.get('_header',(req,res) => res.render('header',{
 }));
 
 route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
@@ -104,12 +119,15 @@ route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
 
 //APIs
 route.post('/api/users', controller.create);
+route.post('/api/italok', italcontroller.create);
+route.post('/api/kavek', kavecontroller.create);
 route.get('/api/users', controller.find);
 route.put('/api/users/:id', controller.update);
 route.delete('/api/users/:id', controller.delete);
 route.get('/api/italok', italcontroller.find);
 route.get('/api/kavek', kavecontroller.find);
 route.get('/api/sutemenyek', sutikontroller.find);
+route.get('/api/sutemenyek', sutikontroller.create);
 route.get('/api/orders', ordercontroller.find);
 
 

@@ -65,7 +65,7 @@ var cart_n=document.getElementById('cart_n');
     }
 
 
-     function italdiv_fun({ name, kiszereles, ar,con}){
+     function italdiv_fun({ name, kiszereles, price,con}){
         let div = document.createElement('div');
         let btn=`btnFruit${con}`;
         var mennyiseg = document.createElement('mennyiseg');
@@ -83,13 +83,13 @@ var cart_n=document.getElementById('cart_n');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Egységár: ${ar} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
   <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group">
-    <button id="${btn}" type="button" onclick="cart('${name}','${ar}','${con}','${btn}','${asztal1}')"
+    <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}','${asztal1}')"
     class="btn btn-sm btn-outline-secondary">Kosárba</button>
 </div>
 

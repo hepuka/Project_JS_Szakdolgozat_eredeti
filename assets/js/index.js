@@ -5,6 +5,22 @@ $("#add_user").submit(function(event){
    alert("Új felhasználó sikeresen hozzáaadva!");
 })
 
+$("#add_ital").submit(function(event){
+
+    alert("Új ital sikeresen hozzáaadva!");
+ })
+
+ $("#add_kave").submit(function(event){
+
+    alert("Új kávé sikeresen hozzáaadva!");
+ })
+
+ $("#add_suti").submit(function(event){
+
+    alert("Új sütemény sikeresen hozzáaadva!");
+ })
+
+
 
 $("#update_user").submit(function(event){
     event.preventDefault();

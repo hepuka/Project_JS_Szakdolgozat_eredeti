@@ -27,11 +27,38 @@ exports.usermindrender = (req, res) => {
     
 }
 
+exports.italokmindrenderadmin = (req, res) => {
+
+    axios.get('http://localhost:3000/api/italok')
+        .then(function(response){
+            res.render('products', {italok:response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+
+
 exports.kavekmindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/kavek')
         .then(function(response){
             res.render('table_2', { kavek:response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
+
+exports.kavekmindrenderadmin = (req, res) => {
+
+    axios.get('http://localhost:3000/api/kavek')
+        .then(function(response){
+            res.render('products', { kavek:response.data });
         })
         .catch(err =>{
             res.send(err);
@@ -53,6 +80,18 @@ exports.sutemenyekmindrender = (req, res) => {
     
 }
 
+exports.sutemenyekmindrenderadmin = (req, res) => {
+
+    axios.get('http://localhost:3000/api/sutemenyek')
+        .then(function(response){
+            res.render('products', { sutemenyek : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+
+    
+}
 
 exports.ordermindrender = (req, res) => {
 
@@ -71,6 +110,18 @@ exports.add_user = (req, res) =>{
     res.render('add_user');
 }
 
+exports.add_ital = (req, res) =>{
+    res.render('add_ital');
+}
+
+exports.add_kave = (req, res) =>{
+    res.render('add_kave');
+}
+
+exports.add_suti = (req, res) =>{
+    res.render('add_suti');
+}
+
 
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
@@ -82,3 +133,9 @@ exports.update_user = (req, res) =>{
         })
 }
 
+exports.dashboardViewupdateuser= (req, res)=>{
+    res.render("update_user", {
+      user: req.user
+    });
+       
+  };
