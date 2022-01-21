@@ -1,18 +1,18 @@
-var products=JSON.parse(localStorage.getItem('cart'));
+var products=JSON.parse(localStorage.getItem('cart2'));
 var cartItems=[];
-var cart_n=document.getElementById('cart_n');
-var table=document.getElementById('table');
+var cart_n=document.getElementById('cart_n2');
+var table=document.getElementById('table2');
 var total=0;
 
 //kosár tartalma
-function tableHTML(i){
+function tableHTML2(i){
 
     return `
             <tr>
                 <td style="text-align:center">${products[i].name}</td>
-                <td id="mennyiseg" style="text-align:center">1</td>                
+                <td id="mennyiseg" style="text-align:center">1</td>
                 <td style="text-align:center">${products[i].price} Ft</td>
-                <td id="asztal1" style="text-align:center">1.asztal</td>
+                <td id="asztal2" style="text-align:center">2.asztal</td>
                 <td style="text-align:center"><input id="bem" type="button" value="Rendelés törlése" onclick="deleteRow(this)"</td>
                 </td>                                     
             </tr>
@@ -23,7 +23,7 @@ function tableHTML(i){
 function deleteRow(btn) {
 
 
-let data = localStorage.getItem('cart');
+let data = localStorage.getItem('cart2');
 
 console.log('data: '+data);
 
@@ -66,7 +66,7 @@ function clean(){
     localStorage.clear();
     for(let index=0;index < products.length;index++){
 
-        table.innerHTML+=tableHTML(index);
+        table.innerHTML+=tableHTML2(index);
         total=total+parseInt(products[index].price);
     }
     total=0;
@@ -93,7 +93,7 @@ function clean(){
 
     for (let index = 0; index < products.length; index++) {
         
-        table.innerHTML+=tableHTML(index);
+        table.innerHTML+=tableHTML2(index);
         total=total+parseInt(products[index].price);
         
     }
@@ -124,12 +124,13 @@ function clean(){
              <td></td>
              <td></td>
              <td></td>
-             <td style="text-align:center"><form id="form1" action="/table_1_order" method="POST" autocomplete="off">
+             <td style="text-align:center"><form id="form2" action="/table_2_order" method="POST" autocomplete="off">
 
              <input type="hidden" name="total" value="${total}">
              <input type="hidden" name="_id" value="">
-             <button id="submitbtn" class="btn btn-success col-md-6">Fizetés</button>
-             </form></td>
+             <button id="submitbtn2" class="btn btn-success col-md-6">Fizetés</button>
+             </form>
+             </td>
           </tr>
 
 
@@ -166,17 +167,17 @@ function clean(){
 
     `;
 
-    products=JSON.parse(localStorage.getItem('cart'));
+    products=JSON.parse(localStorage.getItem('cart2'));
  // cart_n.innerHTML=`[${products.length}]`;
 
 })();
 
 
-var form=document.getElementById('form1');
+var form=document.getElementById('form2');
 
-document.getElementById('submitbtn').addEventListener('click', () =>{
+document.getElementById('submitbtn2').addEventListener('click', () =>{
 
-    localStorage.removeItem('cart')
+    localStorage.removeItem('cart2')
         
     setTimeout(() => {
          
@@ -185,8 +186,6 @@ document.getElementById('submitbtn').addEventListener('click', () =>{
         
  
         }, 5000);
-
-        
   alert('Sikeres tranzakció!');
 });
 

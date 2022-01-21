@@ -7,7 +7,7 @@
 
 var products=[];
 var caItems=[];
-var cart_n=document.getElementById('cart_n');
+var cart_n=document.getElementById('cart_n2');
 
     fetch("http://localhost:3000/api/italok")
     .then(res => res.json())
@@ -55,7 +55,7 @@ var cart_n=document.getElementById('cart_n');
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${orderid}</td>
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${vegosszeg} Ft</td>
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
-        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">1.asztal</td>
+        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">2.asztal</td>
         <td style="text-align:center;border:none">                                
             <a class="btn btn-dark" href="/orders/delete/${_id}">Törlés</a></td>
         </td></td>
@@ -89,7 +89,7 @@ var cart_n=document.getElementById('cart_n');
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group">
-    <button id="${btn}" type="button" onclick="cart('${name}','${ar}','${con}','${btn}')"
+    <button id="${btn}" type="button" onclick="cart2('${name}','${ar}','${con}','${btn}')"
     class="btn btn-sm btn-outline-secondary">Kosárba</button>
 </div>
 
@@ -104,7 +104,7 @@ var cart_n=document.getElementById('cart_n');
    
 
 
-function cart(name,price){
+function cart2(name,price){
 
 var item={
     name:name,
@@ -113,21 +113,21 @@ var item={
 }
 
 caItems.push(item);
-let storage=JSON.parse(localStorage.getItem("cart"));
+let storage=JSON.parse(localStorage.getItem("cart2"));
 
 if(storage==null){
 
     products.push(item);
-    localStorage.setItem("cart",JSON.stringify(products));
+    localStorage.setItem("cart2",JSON.stringify(products));
 
 }else{
 
-    products=JSON.parse(localStorage.getItem("cart"));
+    products=JSON.parse(localStorage.getItem("cart2"));
     products.push(item);
-    localStorage.setItem("cart",JSON.stringify(products));
+    localStorage.setItem("cart2",JSON.stringify(products));
 }
 
-products=JSON.parse(localStorage.getItem("cart"));
+products=JSON.parse(localStorage.getItem("cart2"));
 cart_n.innerHTML=`[${products.length}]`;
 
 alert("Termék a kosárhoz adva!")

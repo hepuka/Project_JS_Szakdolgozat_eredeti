@@ -100,7 +100,7 @@ route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
 }));
 
 
-app.use('/table_1', ordertable1controller);
+//app.use('/table_1', ordertable1controller);
 
 //APIs
 route.post('/api/users', controller.create);
@@ -116,6 +116,12 @@ route.get('/api/orders', ordercontroller.find);
 route.post('/table_1_order', (req,res) =>{
 
     insertOrder(req,res);
+  
+});
+
+route.post('/table_2_order', (req,res) =>{
+
+    insertOrder2(req,res);
   
 });
 
@@ -145,5 +151,34 @@ function insertOrder(req,res){
 
     });
 }
+
+
+function insertOrder2(req,res){
+
+    var d=new Date();
+    var t=d.getTime();
+    var counter=t;
+    counter+=1;
+    
+    var order2=new Order();
+    order2.vegosszeg=req.body.total;
+    order2.orderid=counter;
+    order2.time= Date.now();
+    order2.save((err,doc) =>{
+
+        if(!err){
+          
+         
+            res.redirect('/tables');
+         
+            
+        }else{
+            console.log('Error insertOrder: '+err);
+
+        }
+
+    });
+}
+
 
 module.exports = route

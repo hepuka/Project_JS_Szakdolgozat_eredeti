@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" style="border-radius: 15px;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="chief" style="margin-right: 300px; font-weight: bold;">KUNPAO's CAFE</a>
+        <a class="navbar-brand" href="chief" style="margin-right: 100px; font-weight: bold;">KUNPAO's CAFE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +37,7 @@
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-coins"></i> Pénzügy</a>
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-coins"></i> Pénzügy</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="income">Bevétel</a>
                   
@@ -84,6 +84,12 @@
                 <span class="visually-hidden">(current)</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="table_1_order" style="margin-left: 100px;">Kosár <i id="cart_n"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orders" style="margin-left: 30px;">Megrendelések</a>
+            </li>
           </ul>
           <div class="d-flex">
             <ul class="navbar-nav me-auto">
@@ -104,66 +110,18 @@
 
 
 
-  <div class="container" style="margin-top: 100px;margin-bottom: 50px;">
+  <div class="container" style="margin-top: 80px;margin-bottom: 50px;">
 
  
 
      
 
-<h2 class="mt-4 text-lg font-bold" style="text-align: center">1. asztal rendelésének leadása</h2>
-
-
-    
-<!--   <button type="reset" class="btn btn-warning col-md-2 text-black" style="margin-bottom: 40px; margin-right: 25px;" onclick="location.href='/table_1_order'">
-      Kosár
-  </button>    
-  
-  <button type="reset" class="btn btn-secondary col-md-2 text-black" style="margin-bottom: 40px; margin-left: 25px;" onclick="location.href='/tables'">
-    Vissza
-</button> -->
-
-
-
-<!--   <a href="/table_1_order" class="nav-link">
-     
-      </i>Kosár</i>
-      
-      <i style="color:rgb(76, 0, 255);font-weight:bold" id="cart_n"></i>
-  </a> -->
-
-  <div class="container">
-    <div class="row">
-      <div class="d-flex justify-content-center" style="margin-top:40px;">
-        <button type="reset" class="btn btn-warning col-md-2" style="margin-bottom: 20px; margin-left: 25px;" onclick="location.href='/table_1_order'">
-          Kosár <i style="color:rgb(0, 0, 0);font-weight:bold;font-size: medium;" id="cart_n"></i>
-      </button>
-     </div>
-    
-    
-    <div class="d-flex justify-content-center" style="margin-top:10px;">
-      <button type="reset" class="btn btn-success col-md-2" style="margin-bottom: 20px; margin-left: 25px;" onclick="location.href='/orders'">
-        Megrendelés összesítő
-    </button>
-     </div>
-     <div class="d-flex justify-content-center" style="margin-top:10px;">
-      <button type="reset" class="btn btn-secondary col-md-2" style="margin-bottom:30px; margin-left: 25px;" onclick="location.href='/tables'">
-        Vissza az asztalokhoz
-    </button>
-     </div>
-    </div>
-
-
-  </div>
-
-
-
-
-
+<h3 class="mt-4 text-lg font-bold" style="text-align: center;margin-bottom: 50px;">1. asztal rendelésének leadása</h3>
 
  <main role="main">
   <div class="container">
    
-      <h2 id="italok" class="text-warning">Italok</h2>
+      <h2 id="italok" class="text-dark" style="margin-bottom: 20px;">Italok</h2>
      
       <div class="col-lg-12">
    
@@ -175,7 +133,7 @@
     </div>
 
 <hr style="margin-top: 30px;margin-bottom: 30px;">
-    <h2 id="kavek" class="text-warning">Kávék</h2>
+    <h2 id="kavek" class="text-dark" style="margin-bottom: 20px;">Kávék</h2>
      
     <div class="col-lg-12">
  
@@ -187,7 +145,7 @@
   </div>
 
   <hr style="margin-top: 30px;margin-bottom: 30px;">
-  <h2 id="sutik" class="text-warning">Sütemények</h2>
+  <h2 id="sutik" class="text-dark" style="margin-bottom: 20px;">Sütemények</h2>
    
   <div class="col-lg-12">
 
@@ -201,83 +159,8 @@
 
 
 
+</div>
 
-
-      
-  </div>
   </main>
-
-
-    
-
-
-<!--        <div class="container">
-
-        <h1 class="text-warning" style="margin-top: 80px;margin-left: 170px; font-weight: bold; margin-bottom: 30px;">Italok</h1>
-        <div class="col-9" style="margin-left: 170px;">
-       
-            <table class="table table-hover">
-                <thead style="text-align: center;">
-                  <tr>
-                    <th scope="col-2">Név</th>
-                    <th scope="col-2">Kiszerelés</th>
-                    <th scope="col-2">Egységár (Ft)</th>
-                    <th scope="col-2">Rendelt mennyiség</th>
-                    <th scope="col-2">Kosárba</th>
-                  </tr>
-                </thead>
-                <tbody id="italoktabla">
-    
-    
-                </tbody>
-              </table>
-        </div>
-  
-  
-        <h1 class="text-warning" style="margin-top: 80px;margin-left: 170px; font-weight: bold; margin-bottom: 30px;">Kávék</h1>
-        <div class="col-9" style="margin-left: 170px;">
-       
-            <table class="table table-hover">
-                <thead style="text-align: center;">
-                  <tr>
-                    <th scope="col-2">Név</th>
-                    <th scope="col-2">Kiszerelés</th>
-                    <th scope="col-2">Egységár (Ft)</th>
-                    <th scope="col-2">Rendelt mennyiség</th>
-                    <th scope="col-2">Kosárba</th>
-                  </tr>
-                </thead>
-                <tbody id="kavektabla">
-    
-    
-                </tbody>
-              </table>
-        </div>
-     
-        <h1 class="text-warning" style="margin-top: 80px;margin-left: 170px; font-weight: bold; margin-bottom: 30px;">Sütemények</h1>
-        <div class="col-9" style="margin-left: 170px;">
-       
-            <table class="table table-hover">
-                <thead style="text-align: center;">
-                  <tr>
-                    <th scope="col-2">Név</th>
-                    <th scope="col-2">Kiszerelés</th>
-                    <th scope="col-2">Egységár (Ft)</th>
-                    <th scope="col-2">Rendelt mennyiség</th>
-                    <th scope="col-2">Kosárba</th>
-                  </tr>
-                </thead>
-                <tbody id="sutemenyektabla">
-    
-    
-                </tbody>
-              </table>
-        </div>
-
-
-
-
-      </div> -->
-      <script src="/js/table_1.js"></script>
 
   <%- include('include/_footer_table1') %>
