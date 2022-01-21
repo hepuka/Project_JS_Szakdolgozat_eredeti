@@ -48,14 +48,13 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
-  function tdorder_fun({_id,orderid, vegosszeg, time}){
+  function tdorder_fun({_id,orderid, vegosszeg, time,asztal}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
         <tr class="table-default border-0 selected" style="text-align: center">
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${orderid}</td>
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${vegosszeg} Ft</td>
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
-        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">1.asztal</td>
         <td style="text-align:center;border:none">                                
             <a class="btn btn-dark" href="/orders/delete/${_id}">Törlés</a></td>
         </td></td>
@@ -70,6 +69,7 @@ var cart_n=document.getElementById('cart_n');
         let div = document.createElement('div');
         let btn=`btnFruit${con}`;
         var mennyiseg = document.createElement('mennyiseg');
+        var asztal1 = document.createElement('asztal1');
         div.className="col-lg-3"
         div.innerHTML = `
 
@@ -89,7 +89,7 @@ var cart_n=document.getElementById('cart_n');
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group">
-    <button id="${btn}" type="button" onclick="cart('${name}','${ar}','${con}','${btn}')"
+    <button id="${btn}" type="button" onclick="cart('${name}','${ar}','${con}','${btn}','${asztal1}')"
     class="btn btn-sm btn-outline-secondary">Kosárba</button>
 </div>
 
