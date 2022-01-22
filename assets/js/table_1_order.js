@@ -28,37 +28,9 @@ console.log('data: '+data);
 
 var row = btn.parentNode.parentNode;
 row.parentNode.removeChild(row);
-  
-//localStorage.splice('cart'.split)
-
-/*        
-          
-    data.splice(row,1); //remove data[i]
-    localStorage.setItem('cart', data);
-    
-    var questions = localStorage.getItem('cart').parseJSON;
-
-
-    console.log(questions);
-   questions.splice(row, 0);
-localStorage.setItem('cart', JSON.stringify(questions)); */
-
-
-
 
   }
   
-/* 
-  function deleteRow(r){
-    var i = r.parentNode.parentNode.rowIndex;
-    document.getElementById("dsTable").deleteRow(i);
-
-    let data = localStorage.getItem('cart');
-    data.split(i,1); //remove data[i]
-    localStorage.setItem('cart', data);
-  }
- */
-
 
 //kosár kiürítése
 function clean(){
@@ -143,7 +115,6 @@ function clean(){
     `;
 
     products=JSON.parse(localStorage.getItem('cart'));
- // cart_n.innerHTML=`[${products.length}]`;
 
 })();
 
