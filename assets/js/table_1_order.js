@@ -118,7 +118,7 @@ function clean(){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-warning" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
+                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
                 <td></td>
                 
              </tr>

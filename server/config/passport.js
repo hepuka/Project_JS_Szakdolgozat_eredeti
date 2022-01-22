@@ -17,7 +17,7 @@ module.exports = function(passport) {
           return done(null, false, { message: 'Nem regisztrált felhasználónév!' });
         }
 
-        // Match password
+     
         bcrypt.compare(password, user.password, (err, isMatch) => {
           if (err) throw err;
           if (isMatch) {
