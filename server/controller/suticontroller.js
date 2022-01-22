@@ -1,5 +1,6 @@
 const Sutidb = require('../model/sutimodel');
 
+
 exports.create = (req,res)=>{
    
     if(!req.body){

@@ -127,8 +127,9 @@ route.delete('/api/users/:id', controller.delete);
 route.get('/api/italok', italcontroller.find);
 route.get('/api/kavek', kavecontroller.find);
 route.get('/api/sutemenyek', sutikontroller.find);
-route.get('/api/sutemenyek', sutikontroller.create);
+route.post('/api/sutemenyek', sutikontroller.create);
 route.get('/api/orders', ordercontroller.find);
+
 
 
 route.post('/table_1_order', (req,res) =>{
