@@ -9,81 +9,54 @@ function tableHTML2(i){
 
     return `
             <tr>
+            <td style="text-align:center">${i+1}</td>
                 <td style="text-align:center">${products[i].name}</td>
                 <td id="mennyiseg" style="text-align:center">1</td>
                 <td style="text-align:center">${products[i].price} Ft</td>
-                <td style="text-align:center"><input id="bem" type="button" value="Rendelés törlése" onclick="deleteRow(this)"</td>
-                </td>                                     
+                <td style="text-align:center;border:none">                                
+                <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Rendelés törlése</a></td>                                  
             </tr>
     `;
 }
 //kosár tartalma vége
+function deleteRow(id) { 
 
-function deleteRow(btn) {
+    var result = confirm("Rendelés törlése?");
+    if (result) {
+        var data = localStorage.getItem('cart2')
+        data = JSON.parse(data);
+
+        for(var i=0;i<data.length;i++){
+
+                if(data[i].id == id){
 
 
-let data = localStorage.getItem('cart2');
+                        data.splice(i, 1);
+                        localStorage.setItem('cart2', JSON.stringify(data));
+                }
 
-console.log('data: '+data);
+            
+        }
 
-var row = btn.parentNode.parentNode;
-row.parentNode.removeChild(row);
-  
+        window.location.reload();
+       
+                     
+                    } 
 
-/*        
-          
-    data.splice(row,1); //remove data[i]
-    localStorage.setItem('cart', data);
+     
     
-    var questions = localStorage.getItem('cart').parseJSON;
+    }  
 
-
-    console.log(questions);
-   questions.splice(row, 0);
-localStorage.setItem('cart', JSON.stringify(questions)); */
-
-
-
-
-  }
   
-/* 
-  function deleteRow(r){
-    var i = r.parentNode.parentNode.rowIndex;
-    document.getElementById("dsTable").deleteRow(i);
-
-    let data = localStorage.getItem('cart');
-    data.split(i,1); //remove data[i]
-    localStorage.setItem('cart', data);
-  }
- */
-
-
 //kosár kiürítése
 function clean(){
 
-    localStorage.removeItem('cart2')
-    for(let index=0;index < products.length;index++){
+    var result = confirm("Törli a kosár tartalmát?");
 
-        table.innerHTML+=tableHTML2(index);
-        total=total+parseInt(products[index].price);
+    if(result){
+ localStorage.removeItem('cart2');
+
     }
-    total=0;
-    table.innerHTML=`
-
-        <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-        </tr>
-
-
-    `;
-    cart_n.innerHTML='';
-    alert('A kosár törölve!')
-    document.getElementById("btnBuy").style.display="none";
-    document.getElementById("btnClean").style.display="none";
 
 }
 //kosár kiürítése vége
@@ -139,7 +112,7 @@ function clean(){
     `;
 
     products=JSON.parse(localStorage.getItem('cart2'));
- // cart_n.innerHTML=`[${products.length}]`;
+
 
 })();
 

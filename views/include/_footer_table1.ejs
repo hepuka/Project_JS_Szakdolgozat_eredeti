@@ -56,7 +56,7 @@ var cart_n=document.getElementById('cart_n');
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${vegosszeg} Ft</td>
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
         <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" href="/orders/delete/${_id}">Törlés</a></td>
+            <a class="btn btn-dark" href="/orders/delete/${_id}">Rendelés törlése</a></td>
         </td></td>
 
     </tr>
@@ -68,8 +68,6 @@ var cart_n=document.getElementById('cart_n');
      function italdiv_fun({ name, kiszereles, price,con}){
         let div = document.createElement('div');
         let btn=`btnFruit${con}`;
-        var mennyiseg = document.createElement('mennyiseg');
-        var asztal1 = document.createElement('asztal1');
         div.className="col-lg-3"
         div.innerHTML = `
 
@@ -89,7 +87,7 @@ var cart_n=document.getElementById('cart_n');
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group" style="margin-top:10px;margin-bottom:10px">
-    <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}','${asztal1}')"
+    <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
     class="btn btn-sm btn-outline-secondary">Kosárba</button>
 </div>
 
@@ -104,9 +102,10 @@ var cart_n=document.getElementById('cart_n');
    
 
 
-function cart(name,price){
+function cart(name,price,id){
 
 var item={
+    id:Math.random(),
     name:name,
     price:price,
     

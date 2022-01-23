@@ -38,9 +38,9 @@ route.get('/tables', ensureAuthenticated,dashboardViewtables, (req,res) => res.r
 }));
 
     //localhost:3000 utáni címrész
-route.get('/admin', ensureAuthenticated,admin, services.usermindrender,services.dashboardViewupdateuser);
+route.get('/admin', ensureAuthenticated,dashboardViewadmin,admin ,services.usermindrender);
 route.get('/add-user', ensureAuthenticated,dashboardViewadduser, admin, services.add_user);
-route.get('/update-user', ensureAuthenticated, admin, services.update_user, services.dashboardViewupdateuser);
+route.get('/update-user', ensureAuthenticated, admin, services.update_user, dashboardViewupdateuser);
 
 route.get('/table_1', ensureAuthenticated, dashboardViewtable_1,services.italokmindrender);
 route.get('/orders', ensureAuthenticated,admin,dashboardVieworders, services.ordermindrender);
@@ -48,7 +48,7 @@ route.get('/orders', ensureAuthenticated,admin,dashboardVieworders, services.ord
 route.get('/table_2', ensureAuthenticated,dashboardViewtable_2,services.kavekmindrender);
 route.get('/table_1', ensureAuthenticated,services.sutemenyekmindrender);
 
-route.get('/products', ensureAuthenticated,dashboardViewproducts, services.italokmindrenderadmin, services.italokmindrenderadmin, services.sutemenyekmindrenderadmin);
+route.get('/products', ensureAuthenticated,dashboardViewproducts, admin, services.italokmindrenderadmin, services.italokmindrenderadmin, services.sutemenyekmindrenderadmin);
 
 route.get('/add-ital', ensureAuthenticated,dashboardViewaddital, admin, services.add_ital);
 route.get('/add-kave', ensureAuthenticated,dashboardViewaddkave, admin, services.add_kave);
@@ -70,24 +70,6 @@ route.get('/orders/delete/:id', (req,res) => {
 
 });
 
-/* route.get('/table_1_order/delete/:id', (req,res) => {
-
-    Order.findByIdAndRemove(req.params.id,(err,docs) =>{
-
-        if(!err){
-          
-            res.redirect('/table_1_order');
-     
-        }else{
-
-            console.log('Error in delete: '+err);
-        }
-    });
-
-}); */
-
-
-
 route.get('/income', ensureAuthenticated,admin,(req,res) => res.render('income',{
 }));
 
@@ -103,19 +85,9 @@ route.get('/table_2', ensureAuthenticated,(req,res) => res.render('table_2',{
 route.get('/chief', ensureAuthenticated, dashboardViewchief, admin, (req,res) => res.render('chief',{
 }));
 
-
-route.get('_headerlog',(req,res) => res.render('headerlog',{
-}));
-
-
-route.get('_header',(req,res) => res.render('header',{
-}));
-
 route.get('/warning', ensureAuthenticated, (req,res) => res.render('warning', {
 }));
 
-
-//app.use('/table_1', ordertable1controller);
 
 //APIs
 route.post('/api/users', controller.create);

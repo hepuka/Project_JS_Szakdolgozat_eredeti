@@ -88,3 +88,10 @@
     });
        
   };
+
+  exports.dashboardViewupdateuser= (req, res)=>{
+    res.render("update_user", {
+      user: req.user
+    });
+       
+  };

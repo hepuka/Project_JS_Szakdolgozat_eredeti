@@ -1,5 +1,7 @@
 const axios = require('axios');
 
+
+
 //itt hívja le a usereket apival, majd rakja a table_1re
 exports.usermindrender = (req, res) => {
 
@@ -14,7 +16,7 @@ exports.usermindrender = (req, res) => {
     
 }
 
- exports.italokmindrender = (req, res) => {
+exports.italokmindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/italok')
         .then(function(response){
@@ -122,7 +124,6 @@ exports.add_suti = (req, res) =>{
     res.render('add_suti');
 }
 
-
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
@@ -132,10 +133,3 @@ exports.update_user = (req, res) =>{
             res.send(err);
         })
 }
-
-exports.dashboardViewupdateuser= (req, res)=>{
-    res.render("update_user", {
-      user: req.user
-    });
-       
-  };
