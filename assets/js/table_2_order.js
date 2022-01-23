@@ -88,12 +88,14 @@ function clean(){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-warning" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
                 <td></td>
+                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
+                
                 
              </tr>
 
              <tr class="border border-white">
+             <td></td>
              <td></td>
              <td></td>
              <td></td>
@@ -105,7 +107,7 @@ function clean(){
              <button id="submitbtn2" class="btn btn-success col-md-6">Fizetés</button>
              </form>
              </td>
-             <td></td>
+            
 
           </tr>              
 
