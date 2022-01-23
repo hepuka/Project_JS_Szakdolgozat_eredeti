@@ -38,7 +38,7 @@ route.get('/tables', ensureAuthenticated,dashboardViewtables, (req,res) => res.r
 }));
 
     //localhost:3000 utáni címrész
-route.get('/admin', ensureAuthenticated,dashboardViewadmin,admin ,services.usermindrender);
+route.get('/admin', ensureAuthenticated,admin ,services.usermindrender);
 route.get('/add-user', ensureAuthenticated,dashboardViewadduser, admin, services.add_user);
 route.get('/update-user', ensureAuthenticated, admin, services.update_user, dashboardViewupdateuser);
 

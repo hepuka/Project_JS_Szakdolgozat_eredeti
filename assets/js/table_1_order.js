@@ -129,6 +129,11 @@ var form=document.getElementById('form1');
 
 document.getElementById('submitbtn').addEventListener('click', () =>{
 
+
+    var result = confirm('Termékek kifizetése?');
+
+    if(result){
+
     localStorage.removeItem('cart')
         
     setTimeout(() => {
@@ -141,6 +146,17 @@ document.getElementById('submitbtn').addEventListener('click', () =>{
 
         
   alert('Sikeres tranzakció!');
+
+
+
+    }else{
+
+        res.redirect('/table_1_order');
+
+    }
+
+
+
 });
 
 function sub(){
