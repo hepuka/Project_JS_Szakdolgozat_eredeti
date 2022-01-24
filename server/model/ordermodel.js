@@ -5,7 +5,8 @@ var schema = new mongoose.Schema({
 
     orderid: Number,
     time: Date,
-    vegosszeg: Number 
+    vegosszeg: Number ,
+    table:String
 },{collection:'orders'});
 
 const orderdb = mongoose.model('orders', schema);

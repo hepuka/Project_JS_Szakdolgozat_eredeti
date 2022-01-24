@@ -13,6 +13,7 @@ function tableHTML(i){
             <td style="text-align:center">${products[i].name}</td>
             <td id="mennyiseg" style="text-align:center">1</td>      
             <td style="text-align:center">${products[i].price} Ft</td>
+            <td style="text-align:center">${products[i].table}</td>
             <td style="text-align:center;border:none">                                
             <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Rendelés törlése</a></td>                   
             </tr>
@@ -47,12 +48,9 @@ function deleteRow(id) {
                      
                     } 
 
-     
-    
     }  
 
     
-
 //kosár kiürítése
 function clean(){
 
