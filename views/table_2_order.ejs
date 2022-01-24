@@ -49,36 +49,34 @@
             </div>
           </nav>  
 
-  <div class="container shadow-lg" style="margin-top: 80px;margin-bottom: 50px; border-radius: 20px;">
-    <div class="flex items-center border-b border-gray-300 pb-4" style="text-align: center;">
-      <h3 class="font-bold ml-4 text-2xl" style="padding-top: 20px;">Rendelés összesítő</h3>
-   </div>
-   <div class="mt-5">
-    <main role="main">
-        <div class="row">
-            <div class="col">
-                <div class="table-responsive-sm" style="margin-left: 150px;">
+          <div class="container d-flex justify-content-center">
+
+            <div class="col-12 shadow-lg mt-5 justify-content-center" style="border-radius: 30px;">
+        
+                <h3 class="text-secondary" style="margin-left: 170px; font-weight: bold; margin-bottom: 30px;padding-top: 30px;">Rendelés összesítő</h3>   
+                
+                <div class="col-12" style="margin-top: 50px;">
+               
                     <table id = 'dsTable2' class="table">
-                        <thead>
-                            <tr>
-                              <td scope="col" style="text-align:center">Sorszám</td>
-                                <td scope="col" style="text-align:center">Termék</td>
-                                <td scope="col" style="text-align:center">Mennyiség</td>
-                                <td scope="col" style="text-align:center">Egységár</td>
-                                <td scope="col" style="text-align:center">Műveletek</td>
-                            </tr>
+                        <thead style="text-align: center;">
+                          <tr>
+                            <th class="col-2">Sorszám</th>
+                            <th class="col-2">Termék</th>
+                            <th class="col-2">Mennyiség</th>
+                            <th class="col-2">Egységár</th>
+                            <th class="col-2">Műveletek</th>                            
+                          </tr>
+                        
                         </thead>
-                            <tbody id="table2" class="border border-white">
-
-                            </tbody>
-                    </table> 
+                        <tbody id="table2" class="border-white">
+            
+                        </tbody>
+                      </table>
                 </div>
-            </div>
+        
+              </div>
+            
         </div>
-    </main>
-</div>
-
-</div>
 
 <script src="\js\table_2_order.js"></script>
 

@@ -93,7 +93,8 @@ function clean(){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
+                <td></td>
+                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:20px">Végösszeg: ${total} Ft</td>
                 
                 
              </tr>
@@ -103,11 +104,12 @@ function clean(){
              <td></td>
              <td></td>
              <td></td>
+             <td></td>
              <td style="text-align:center"><form id="form1" action="/table_1_order" method="POST" autocomplete="off">
 
              <input type="hidden" name="total" value="${total}">
              <input type="hidden" name="_id" value="">
-             <button id="submitbtn" class="btn btn-success col-md-6">Fizetés</button>
+             <button id="submitbtn" class="btn btn-success col-8">Fizetés</button>
              </form>
              
              </td>

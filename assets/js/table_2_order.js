@@ -89,7 +89,7 @@ function clean(){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:30px">Végösszeg: ${total} Ft</td>
+                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:20px">Végösszeg: ${total} Ft</td>
                 
                 
              </tr>
@@ -104,7 +104,7 @@ function clean(){
              <input type="hidden" name="total" value="${total}">
              <input type="hidden" name="_id" value="">
              <input type="hidden" name="asztal2" value="2.asztal">
-             <button id="submitbtn2" class="btn btn-success col-md-6">Fizetés</button>
+             <button id="submitbtn2" class="btn btn-success col-6">Fizetés</button>
              </form>
              </td>
             
