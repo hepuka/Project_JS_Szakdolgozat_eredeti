@@ -88,18 +88,18 @@ function clean(){
     <td></td>
     <td></td>
         </tr>
-            <tr class="border border-white">
+            <tr class="no-border">
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:20px">Végösszeg: ${total} Ft</td>
+                <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:20px;">Végösszeg: ${total} Ft</td>
                 
                 
              </tr>
 
-             <tr class="border border-white">
+             <tr class="no-border">
              <td></td>
              <td></td>
              <td></td>

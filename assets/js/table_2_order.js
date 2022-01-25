@@ -84,7 +84,7 @@ function clean(){
     <td></td>
     <td></td>
         </tr>
-            <tr class="border border-white">
+            <tr class="no-border">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -94,7 +94,7 @@ function clean(){
                 
              </tr>
 
-             <tr class="border border-white">
+             <tr class="no-border">
              <td></td>
              <td></td>
              <td></td>
