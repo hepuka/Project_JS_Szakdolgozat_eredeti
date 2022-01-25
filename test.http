@@ -1,0 +1,22 @@
+### GET ALL USERS
+GET http://localhost:3000/api/users HTTP/1.1
+
+
+### GET ONE USER
+GET http://localhost:3000/api/users/61c6378d28b817b72cc7942e HTTP/1.1
+
+### GET ALL ITALOK
+
+GET http://localhost:3000/api/italok HTTP/1.1
+
+### GET ALL KAVEK
+
+GET http://localhost:3000/api/kavek HTTP/1.1
+
+### GET ALL SÜTIK
+
+GET http://localhost:3000/api/sutemenyek HTTP/1.1
+
+### GET ALL ORDERS
+
+GET http://localhost:3000/api/orders HTTP/1.1
