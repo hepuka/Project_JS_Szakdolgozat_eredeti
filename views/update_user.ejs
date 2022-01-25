@@ -1,93 +1,7 @@
 
+<%- include('include/_header_admin.ejs') %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUNPAO's CAFE</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
-    <link
-      rel="stylesheet"
-      href="https://bootswatch.com/5/sandstone/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-   
-</head>
-<body>
-
- <!-- MENÜ -->
- <div class="container" style="margin-top: 40px;margin-bottom: 50px;">
-  <div class="row">      
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" style="border-radius: 15px;">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="chief" style="margin-right: 300px; font-weight: bold;">KUNPAO's CAFE</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse" id="navbarColor03">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i> Adminisztráció</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="add-user">Új alkalmazott felvétele</a>                   
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="admin">Alkalmazottak lekérdezése</a>
-                </div>
-              </li>
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fab fa-product-hunt"></i>Termékek</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="add-ital">Új Ital felvétele</a>                   
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="add-kave">Új Kávé felvétele</a>                   
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="add-suti">Új Sütemény felvétele</a>                   
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="products">Termékek lekérdezése</a>
-                </div>
-              </li>
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="orders"><i class="fab fa-first-order"></i>Rendelés összesítő
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin" style="margin-left: 40px;">Vissza
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-          </ul>
-          <div class="d-flex">
-            <ul class="navbar-nav me-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: white;">Bejelentkezve: <%= user.name %></a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="/users/logout">Kijelentkezés</a>
-              </div>
-            </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    </div>
-  </div>
- <!-- MENÜ VÉGE -->
-
-
-  <main id="site-main">
+ <main id="site-main">
     <div class="container">
         <div class="row" style="margin-top: 150px;">
             <div class="col-md-6 m-auto">
@@ -124,6 +38,11 @@
     </div>
     
 </form>
+<div class="container" style="margin-top: 40px">
+  <div class="row justify-content-center">
+    <button onclick="window.location.href='admin'"class="btn btn-dark col-md-4 update">Vissza</button>
+  </div>
+</div>
 </div>     
     </div>
 </div>
