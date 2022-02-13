@@ -1,9 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
-const mongoose=require('mongoose');
 const bcrypt = require('bcryptjs');
-
-// Load User model
-const User = require('../model/model');
+const User = require('../model/model');// Load User model
 
 module.exports = function(passport) {
   passport.use(
@@ -16,8 +13,7 @@ module.exports = function(passport) {
         if (!user) {
           return done(null, false, { message: 'Nem regisztrált felhasználónév!' });
         }
-
-     
+  
         bcrypt.compare(password, user.password, (err, isMatch) => {
           if (err) throw err;
           if (isMatch) {

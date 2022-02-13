@@ -1,32 +1,31 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const app = express();
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
-const path = require('path');
-const app = express();
 const session=require('express-session');
-const sessions=require('express-session');
-const passport = require('passport');
 const flash=require('connect-flash');
+const passport = require('passport');
+require('./config/passport')(passport);
+
+//conn to server,MongoDB
+const path = require('path');
+const dotenv = require('dotenv');
 dotenv.config( { path : 'config.env'} )
-const PORT = process.env.PORT || 8080
-require('dotenv').config()
-const eflash=require('express-flash');
-const MongoDbStore=require('connect-mongo');
 const mongoose = require('mongoose');
-require('./server/config/passport')(passport);
 
-const url='mongodb+srv://kavezo:kavezo@cluster0.q7veg.mongodb.net/kavezo?retryWrites=true&w=majority';
-mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:true});
-const connection=mongoose.connection;
+mongoose.connect(process.env.MONGO_URI,{
+  useNewUrlParser:true,
+  useCreateIndex:true,
+  useUnifiedTopology:true,
+  useFindAndModify:true
+})
+.then(() =>{
+  app.listen(3000, ()=> { 
+    console.log("Server is running on http://localhost:3000");
+    console.log('Database connected!');
+  });
 
-connection.once('open', () =>{
-
-console.log('Database connected!');
-}).catch(err =>{
-  console.log('Connection failed')
 });
-
 
 app.use(morgan('tiny'));
 
@@ -40,19 +39,6 @@ app.set("view engine", "ejs")
     saveUninitialized: true
   }));
 
-  
-   app.use(sessions(
-    {
-      secret: process.env.COOKIE_SECRET,
-      resave: false,
-      store: MongoDbStore.create({ 
-        mongoUrl: url}),
-        saveUninitialized: false,
-        cookie:{maxAge: 1000*60*60*24}    
-    }));
-
-app.use(eflash())
-
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -64,7 +50,6 @@ app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
-app.use('/', require('./server/routes/router'));
-app.use('/users', require('./server/routes/users'));
+app.use('/', require('./routes/router'));
+app.use('/users', require('./routes/users'));
 
-app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
