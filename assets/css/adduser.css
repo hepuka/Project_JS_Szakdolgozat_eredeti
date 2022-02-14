@@ -1,0 +1,15 @@
+.container{
+    border-radius: 30px; 
+    width: 800px; 
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.form-group{
+    margin-bottom: 30px
+}
+
+.form-control{
+
+    background-color:bisque
+}

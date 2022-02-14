@@ -1,0 +1,31 @@
+.form-label{
+    background-color: bisque;
+    margin-bottom: 10px;
+
+}
+
+.form-group{
+
+    margin-top: 30px;
+    background-color: bisque;
+}
+
+body{
+
+    background-color: bisque;
+}
+
+.container{
+    margin-top: 200px;
+}
+
+.button{
+
+    margin-top: 50px;
+}
+
+.loginplace{
+    width: 700px;
+    border-radius: 30px;
+
+}

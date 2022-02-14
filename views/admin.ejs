@@ -3,26 +3,23 @@
 
    
     <main id="site-main">
-        <div class="container" style="margin-top: 60px;border-radius: 20px;">
-          <h3 class="mt-4" style="text-align: center;padding-top: 30px;">Alkalmazotti adminisztráció</h3>     
-            <form action="/" method="POST">
-                <table class="table" style="margin-top: 40px">
+        <div class="container">
+          <h3 class="cim mt-4">Alkalmazotti adminisztráció</h3>     
+                <table class="table">
                     <thead>
-                        <tr style="text-align: center">
-                            <th class="col-2" style="border: none">Név</th>
-                            <th class="col-2" style="border: none">Felhasználónév</th>
-                            <th class="col-2" style="border: none">Email</th>
-                            <th class="col-2" style="border: none">Jogosultság</th>
-                            <th class="col-2" style="border: none">Műveletek</th>
+                        <tr>
+                            <th class="col-2">Név</th>
+                            <th class="col-2">Felhasználónév</th>
+                            <th class="col-2">Email</th>
+                            <th class="col-2">Jogosultság</th>
+                            <th class="col-2">Műveletek</th>
                         </tr>
                     </thead>
                     <tbody>
                         <%- include('include/_show') %>
                     </tbody>
                 </table>
-            </form>
         </div>
     </main>
 
-    
     <%- include('include/_footer_login.ejs') %>

@@ -2,16 +2,14 @@
 <%- include('include/_navbar.ejs') %>
 
 
-<div class="container d-flex justify-content-center">
+<div class="container">
 
-    <div class="col-12 mt-5 justify-content-center" style="border-radius: 30px;">
+    <div class="col-12">
 
-        <h3 class="text-secondary" style="margin-left: 170px; font-weight: bold; margin-bottom: 30px;padding-top: 30px;">Megrendelés összesítő</h3>   
-        
-        <div class="col-12" style="margin-top: 50px;">
-       
+        <h3 class="text-secondary">Megrendelés összesítő</h3>   
+              
             <table class="table">
-                <thead style="text-align: center;">
+                <thead>
                   <tr>
                     <th class="col-2">Megrendelés azonosító</th>
                     <th class="col-2">Végösszeg</th>
@@ -23,10 +21,10 @@
     
                 </tbody>
               </table>
-        </div>
-
+       
       </div>
     
 </div>
 
-<%- include('include/_footer_table1') %>
+<script src="/js/orders.js"></script>
+<%- include('include/_footer_chief') %>

@@ -65,3 +65,4 @@ if(window.location.pathname == "/admin"){
 
     })
 }
+

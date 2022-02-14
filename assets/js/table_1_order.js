@@ -23,7 +23,6 @@ function tableHTML(i){
 
 
 //kosár egy elemének törlése
-
 function deleteRow(id) { 
 
     var result = confirm("Rendelés törlése?");
@@ -35,16 +34,13 @@ function deleteRow(id) {
 
                 if(data[i].id == id){
 
-
-                        data.splice(i, 1);
+                    data.splice(i, 1);
                         localStorage.setItem('cart', JSON.stringify(data));
                 }
-
-            
+           
         }
-
         window.location.reload();
-       
+     
                      
                     } 
 
@@ -139,34 +135,16 @@ document.getElementById('submitbtn').addEventListener('click', () =>{
         
     setTimeout(() => {
          
-        sub();
-
-        
- 
+        form.submit();
+       
         }, 5000);
 
         
   alert('Sikeres tranzakció!');
 
-
-
     }else{
-
         res.redirect('/table_1_order');
-
     }
 
-
-
 });
-
-function sub(){
-  
-    setTimeout(() => {
-     
-       form.submit();
-       
-    }, 5000);
    
-
-}

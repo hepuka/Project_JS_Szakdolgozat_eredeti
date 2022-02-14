@@ -70,9 +70,6 @@ route.get('/orders/delete/:id', (req,res) => {
 
 });
 
-route.get('/income', ensureAuthenticated,admin,(req,res) => res.render('income',{
-}));
-
 route.get('/table_1_order', ensureAuthenticated, dashboardView,(req,res) => res.render('table_1_order',{
 }));
 

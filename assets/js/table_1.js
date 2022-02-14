@@ -1,10 +1,4 @@
 
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
-<script>
-
 var products=[];
 var caItems=[];
 var cart_n=document.getElementById('cart_n');
@@ -38,33 +32,6 @@ var cart_n=document.getElementById('cart_n');
             sutiDIV.append(sutidiv_fun(data));
         })
     })
-
-   fetch("http://localhost:3000/api/orders")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
-           
-            orderstabla.append(tdorder_fun(data));
-        })
-    })
-
-  function tdorder_fun({_id,orderid, vegosszeg, time,table}){
-        let tr = document.createElement('tr');
-        tr.innerHTML = `
-    <tr class="table-default border-0 selected" style="text-align: center;">
-        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${orderid}</td>
-        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${vegosszeg} Ft</td>
-      
-        <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
-        <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" href="/orders/delete/${_id}">Rendelés törlése</a></td>
-        </td></td>
-
-    </tr>
-        `;
-        return tr;
-    }
-
 
      function italdiv_fun({ name, kiszereles, price,con}){
         let div = document.createElement('div');
@@ -206,13 +173,3 @@ alert("Termék a kosárhoz adva!")
 
 
 }
-
-</script>
-
-<script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-crossorigin="anonymous"
-></script>  
-</body>
-</html>
