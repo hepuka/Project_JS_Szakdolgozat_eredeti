@@ -33,15 +33,6 @@ var cart_n=document.getElementById('cart_n2');
         })
     })
 
-   fetch("http://localhost:3000/api/orders")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
-           
-            orderstabla.append(tdorder_fun2(data));
-        })
-    })
-
   function tdorder_fun2({_id,orderid, vegosszeg, time}){
         let tr = document.createElement('tr');
         tr.innerHTML = `

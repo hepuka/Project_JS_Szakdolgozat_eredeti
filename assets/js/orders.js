@@ -21,7 +21,7 @@ var cart_n=document.getElementById('cart_n');
       
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
         <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" href="/orders/delete/${_id}">Rendelés törlése</a></td>
+            <a class="btn btn-dark" href="/orders/delete/${_id}">Törlés</a></td>
         </td></td>
 
     </tr>

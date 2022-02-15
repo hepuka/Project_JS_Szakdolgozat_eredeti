@@ -1,0 +1,130 @@
+
+body{
+
+    background-color:bisque;
+}
+
+.button{
+
+    margin-top: 50px;
+}
+
+button{
+    margin:10px;
+}
+
+.card-title{
+    font-weight:bold;
+}
+
+.container{
+    margin-top: 50px; 
+    margin-bottom: 50px;
+    padding-top: 30px; 
+    border-radius: 30px; 
+    width: 800px;
+}
+
+
+.cim{
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 30px;
+    font-weight: bold; 
+}
+
+.col-2{
+    border: none;
+
+}
+
+.form-group{
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+}
+
+.form-label{
+    background-color: bisque;
+    margin-bottom: 15px;
+
+}
+
+hr{
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h1{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+img{
+    width: 300px;
+    border-radius: 30px;
+}
+
+.list-group-item{
+    background-color:bisque;
+}
+
+.login{
+    margin-top: 200px; 
+    
+}
+
+.loginplace{
+    
+  width: 700px;
+
+
+}
+
+.namebox{
+    text-align: center;
+    margin-top:150px;
+}
+
+.productcard{
+    text-align:center;
+    border-radius:15px;
+    background-color:bisque
+}
+
+.table{
+    margin-top: 40px;
+}
+
+
+tr{
+    text-align: center;
+   
+}
+
+td{
+    border: none;
+
+  
+}
+
+thead{
+    text-align: center;
+}
+
+#table, #table2{
+
+    border-color:bisque;
+
+}
+
+.text-dark{
+
+    margin-bottom: 20px;
+}
+
+.welcome{
+    text-align: center
+}
