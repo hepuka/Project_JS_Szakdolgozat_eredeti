@@ -1,5 +1,4 @@
 
-//form.ejs-hez tartozik, értesítést generál
 $("#add_user").submit(function(event){
 
    alert("Új felhasználó sikeresen hozzáaadva!");
@@ -65,4 +64,3 @@ if(window.location.pathname == "/admin"){
 
     })
 }
-
