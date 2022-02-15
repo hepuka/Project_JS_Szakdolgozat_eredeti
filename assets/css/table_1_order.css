@@ -1,0 +1,17 @@
+.cim{
+
+
+    font-weight: bold; 
+    margin-bottom: 70px;
+    padding-top: 30px;
+}
+
+thead{
+    text-align: center;
+}
+
+#table, #table2{
+
+    border-color:bisque;
+
+}

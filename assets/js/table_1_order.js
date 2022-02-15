@@ -61,7 +61,6 @@ function clean(){
 }
 //kosár kiürítése vége
 
-
 (()=>{
 
     for (let index = 0; index < products.length; index++) {
@@ -109,8 +108,6 @@ function clean(){
              </form>
              
              </td>
-          
-
           </tr>
 
     `;
@@ -118,9 +115,6 @@ function clean(){
     products=JSON.parse(localStorage.getItem('cart'));
 
 })();
-
-
-
 
 var form=document.getElementById('form1');
 
