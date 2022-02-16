@@ -11,7 +11,6 @@
   "author": "Kun-Fagyal Zoltán",
   "license": "KFZ",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "axios": "^0.21.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -23,9 +22,7 @@
     "express": "^4.17.2",
     "express-ejs-layouts": "^2.5.1",
     "express-flash": "^0.0.2",
-    "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
-    "hbs": "^4.2.0",
     "html": "^1.0.0",
     "jason": "^2.0.0",
     "jquery": "^3.6.0",
@@ -34,16 +31,13 @@
     "mongoose": "^5.13.14",
     "morgan": "^1.10.0",
     "node-fetch": "^3.1.1",
-    "node-notifier": "^10.0.0",
     "nodemon": "^2.0.15",
-    "noty": "^3.2.0-beta-deprecated",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
     "node-fetch": ">=3.1.1",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.13"
+    "postcss": "^8.4.5"
   }
 }
