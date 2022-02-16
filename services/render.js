@@ -1,8 +1,5 @@
 const axios = require('axios');
 
-
-
-//itt hívja le a usereket apival, majd rakja a table_1re
 exports.usermindrender = (req, res) => {
 
     axios.get('http://localhost:3000/api/users')

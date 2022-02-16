@@ -40,16 +40,16 @@ fetch("http://localhost:3000/api/sutemenyek")
 <h5 class="card-title">${name}</h5>
 <h6 class="card-subtitle text-muted">KUNPAO's CAFE</h6>
 </div>
+
 <div class="card-body">
 <p class="card-text">Kiszerelés: ${kiszereles}</p>
 </div>
+
 <ul class="list-group list-group-flush">
 <li class="list-group-item">Egységár: ${price} Ft</li>
 </ul>
 
-</div>
-
-         
+</div>  
     `;
     return div;
 }

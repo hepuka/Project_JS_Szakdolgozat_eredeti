@@ -13,9 +13,8 @@ function tableHTML(i){
             <td style="text-align:center">${products[i].name}</td>
             <td id="mennyiseg" style="text-align:center">1</td>      
             <td style="text-align:center">${products[i].price} Ft</td>
-            <td style="text-align:center">${products[i].table}</td>
             <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Rendelés törlése</a></td>                   
+            <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Törlés</a></td>                   
             </tr>
     `;
 }
@@ -87,7 +86,7 @@ function clean(){
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+            
                 <td></td>
                 <td class="text-secondary" style="text-align:center; font-weight:bold;font-size:20px;">Végösszeg: ${total} Ft</td>
                 
@@ -99,12 +98,12 @@ function clean(){
              <td></td>
              <td></td>
              <td></td>
-             <td></td>
+         
              <td style="text-align:center"><form id="form1" action="/table_1_order" method="POST" autocomplete="off">
 
              <input type="hidden" name="total" value="${total}">
              <input type="hidden" name="_id" value="">
-             <button id="submitbtn" class="btn btn-success col-8">Fizetés</button>
+             <button id="submitbtn" class="btn btn-success col-12">Fizetés</button>
              </form>
              
              </td>

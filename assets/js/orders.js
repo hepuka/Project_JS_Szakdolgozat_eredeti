@@ -1,7 +1,3 @@
-var products=[];
-var caItems=[];
-var cart_n=document.getElementById('cart_n');
-
 
    fetch("http://localhost:3000/api/orders")
     .then(res => res.json())
@@ -12,7 +8,7 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
-  function tdorder_fun({_id,orderid, vegosszeg, time,table}){
+  function tdorder_fun({_id,orderid, vegosszeg, time}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
     <tr class="table-default border-0 selected" style="text-align: center;">

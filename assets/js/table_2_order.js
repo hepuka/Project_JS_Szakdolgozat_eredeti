@@ -14,7 +14,7 @@ function tableHTML2(i){
                 <td id="mennyiseg" style="text-align:center">1</td>
                 <td style="text-align:center">${products[i].price} Ft</td>
                 <td style="text-align:center;border:none">                                
-                <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Rendelés törlése</a></td>                                  
+                <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Törlés</a></td>                                  
             </tr>
     `;
 }
@@ -104,7 +104,7 @@ function clean(){
              <input type="hidden" name="total" value="${total}">
              <input type="hidden" name="_id" value="">
              <input type="hidden" name="asztal2" value="2.asztal">
-             <button id="submitbtn2" class="btn btn-success col-6">Fizetés</button>
+             <button id="submitbtn2" class="btn btn-success col-12">Fizetés</button>
              </form>
              </td>
             

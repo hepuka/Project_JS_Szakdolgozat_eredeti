@@ -7,11 +7,32 @@
   
       <div class="collapse navbar-collapse" id="navbarColor03">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="table_1">1.asztal</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rendelés felvétel</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="table_1">1.asztal</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="table_2">2.asztal</a>      
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="table_2">2.asztal</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Rögzített Rendelések</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="table_1_order">1.asztal</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="table_2_order">2.asztal</a>      
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Kosár törlése</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="table_1_order" onclick="clean()">1.asztal<i id="cart_n"></i></a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="table_2_order" onclick="clean()">2.asztal<i id="cart_n2"></i></a>    
+            </div>
           </li>
         </ul>
         
