@@ -41,7 +41,7 @@ var cart_n=document.getElementById('cart_n');
 
         <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
-  <div class="card-body text-dark" style="padding:0px">
+  <div class="card-body text-dark" style="padding:0px;margin-bottom:0px">
     <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
     <h5 style="font-weight:bold" class="card-title">${name}</h5>
   </div>
@@ -82,7 +82,7 @@ var cart_n=document.getElementById('cart_n');
 
         <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
-  <div class="card-body text-dark" style="padding:0px">
+  <div class="card-body text-dark" style="padding:0px;margin-bottom:0px">
     <img src="/img/menu1.jpg" class="card-img-top" style="padding-bottom:10px">
     <h5 style="font-weight:bold" class="card-title">${name}</h5>
     <h6 class="card-subtitle text-muted"></h6>
@@ -122,7 +122,7 @@ var cart_n=document.getElementById('cart_n');
 
         <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
-  <div class="card-body text-dark" style="padding:0px">
+  <div class="card-body text-dark" style="padding:0px;margin-bottom:0px">
     <img src="/img/menu3.jpg" class="card-img-top" style="padding-bottom:10px">
     <h5 style="font-weight:bold" class="card-title">${name}</h5>
     <h6 class="card-subtitle text-muted"></h6>

@@ -36,7 +36,7 @@ fetch("http://localhost:3000/api/sutemenyek")
 
     <div class="productcard card mb-3">
 
-<div class="card-body">
+<div class="card-body" style="padding-bottom:0px;">
 <h5 class="card-title">${name}</h5>
 <h6 class="card-subtitle text-muted">KUNPAO's CAFE</h6>
 </div>
