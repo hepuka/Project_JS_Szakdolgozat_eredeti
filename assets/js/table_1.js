@@ -44,7 +44,6 @@ var cart_n=document.getElementById('cart_n');
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
     <h5 style="font-weight:bold" class="card-title">${name}</h5>
-    <h6 class="card-subtitle text-muted"></h6>
   </div>
   <div class="card-body">
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
@@ -52,7 +51,9 @@ var cart_n=document.getElementById('cart_n');
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted">
+
+  <div class="card-body">
+  <h6>Rendelés felvétele:</h6>
     <div class="d-flex justify-content-center align-items-center">
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
 
@@ -92,7 +93,8 @@ var cart_n=document.getElementById('cart_n');
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted">
+  <div class="card-body">
+  <h6>Rendelés felvétele:</h6>
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
@@ -131,7 +133,8 @@ var cart_n=document.getElementById('cart_n');
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted">
+  <div class="card-body">
+  <h6>Rendelés felvétele:</h6>
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
