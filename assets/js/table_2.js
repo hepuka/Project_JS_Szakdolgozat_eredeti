@@ -58,7 +58,7 @@ var cart_n=document.getElementById('cart_n2');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -69,9 +69,9 @@ var cart_n=document.getElementById('cart_n2');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted"style="background-color:bisque" >
+  <div class="card-footer text-muted" >
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group" style="margin-top:10px;margin-bottom:10px">
@@ -95,7 +95,7 @@ var cart_n=document.getElementById('cart_n2');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu1.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -106,9 +106,9 @@ var cart_n=document.getElementById('cart_n2');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted"style="background-color:bisque" >
+  <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group" style="margin-top:10px;margin-bottom:10px">
@@ -132,7 +132,7 @@ var cart_n=document.getElementById('cart_n2');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu3.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -143,9 +143,9 @@ var cart_n=document.getElementById('cart_n2');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted"style="background-color:bisque" >
+  <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group" style="margin-top:10px;margin-bottom:10px">

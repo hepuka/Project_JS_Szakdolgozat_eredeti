@@ -1,7 +1,7 @@
 
 body{
 
-    background-color:bisque;
+    
 }
 
 .button{
@@ -18,7 +18,7 @@ button{
 }
 
 .container{
-    margin-top: 50px; 
+    margin-top: 60px; 
     margin-bottom: 50px;
     padding-top: 30px; 
     border-radius: 30px; 
@@ -29,8 +29,7 @@ button{
 .cim{
     text-align: center;
     margin-bottom: 50px;
-    padding-top: 30px;
-    font-weight: bold; 
+    
 }
 
 .col-2{
@@ -45,7 +44,7 @@ button{
 }
 
 .form-label{
-    background-color: bisque;
+   
     margin-bottom: 15px;
 
 }
@@ -67,8 +66,10 @@ img{
     border-radius: 30px;
 }
 
-.list-group-item{
-    background-color:bisque;
+.navimg{
+
+    width:30px;
+    height:30px;
 }
 
 .login{
@@ -91,7 +92,7 @@ img{
 .productcard{
     text-align:center;
     border-radius:15px;
-    background-color:bisque
+    
 }
 
 .table{
@@ -114,11 +115,7 @@ thead{
     text-align: center;
 }
 
-#table, #table2{
 
-    border-color:bisque;
-
-}
 
 .text-dark{
 

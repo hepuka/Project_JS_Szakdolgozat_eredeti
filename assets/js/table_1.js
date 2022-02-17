@@ -39,7 +39,7 @@ var cart_n=document.getElementById('cart_n');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -50,14 +50,18 @@ var cart_n=document.getElementById('cart_n');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted" style="background-color:bisque">
+  <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
-
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
+
     <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
-    class="btn btn-sm btn-outline-secondary">Kosárba</button>
+    class="btn btn-sm btn-outline-secondary">1.asztal</button>
+</div>
+<div class="btn-group" style="margin-top:10px;margin-bottom:10px">
+    <button id="${btn}" type="button" onclick="cart2('${name}','${price}','${con}','${btn}')"
+    class="btn btn-sm btn-outline-secondary">2.asztal</button>
 </div>
 
         </div>
@@ -75,7 +79,7 @@ var cart_n=document.getElementById('cart_n');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu1.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -86,16 +90,19 @@ var cart_n=document.getElementById('cart_n');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted" style="background-color:bisque">
+  <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
     <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
-    class="btn btn-sm btn-outline-secondary">Kosárba</button>
+    class="btn btn-sm btn-outline-secondary">1.asztal</button>
 </div>
-
+<div class="btn-group" style="margin-top:10px;margin-bottom:10px">
+    <button id="${btn}" type="button" onclick="cart2('${name}','${price}','${con}','${btn}')"
+    class="btn btn-sm btn-outline-secondary">2.asztal</button>
+</div>
         </div>
   </div>
 </div>
@@ -111,7 +118,7 @@ var cart_n=document.getElementById('cart_n');
         div.className="col-lg-3"
         div.innerHTML = `
 
-        <div style="text-align:center;border-radius:15px;background-color:bisque" class="card mb-3 shadow-lg">
+        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
   <div class="card-body text-dark" style="padding:0px">
     <img src="/img/menu3.jpg" class="card-img-top" style="padding-bottom:10px">
@@ -122,16 +129,19 @@ var cart_n=document.getElementById('cart_n');
     <p class="card-text">Kiszerelés: ${kiszereles}</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" style="background-color:bisque">Egységár: ${price} Ft</li>
+    <li class="list-group-item">Egységár: ${price} Ft</li>
   </ul>
-  <div class="card-footer text-muted" style="background-color:bisque">
+  <div class="card-footer text-muted">
     <div class="d-flex justify-content-center align-items-center">
 
 <div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
     <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
-    class="btn btn-sm btn-outline-secondary">Kosárba</button>
+    class="btn btn-sm btn-outline-secondary">1.asztal</button>
 </div>
-
+<div class="btn-group" style="margin-top:10px;margin-bottom:10px">
+    <button id="${btn}" type="button" onclick="cart2('${name}','${price}','${con}','${btn}')"
+    class="btn btn-sm btn-outline-secondary">2.asztal</button>
+</div>
         </div>
   </div>
 </div>
@@ -173,3 +183,35 @@ alert("Termék a kosárhoz adva!")
 
 
 }
+
+function cart2(name,price,id){
+
+  var item={
+      id:Math.random(),
+      name:name,
+      price:price,
+      
+  }
+  
+  caItems.push(item);
+  let storage=JSON.parse(localStorage.getItem("cart2"));
+  
+  if(storage==null){
+  
+      products.push(item);
+      localStorage.setItem("cart2",JSON.stringify(products));
+  
+  }else{
+  
+      products=JSON.parse(localStorage.getItem("cart2"));
+      products.push(item);
+      localStorage.setItem("cart2",JSON.stringify(products));
+  }
+  
+  products=JSON.parse(localStorage.getItem("cart2"));
+  cart_n.innerHTML=`[${products.length}]`;
+  
+  alert("Termék a kosárhoz adva!")
+  
+  
+  }
