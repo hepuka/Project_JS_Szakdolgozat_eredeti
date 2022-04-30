@@ -4,7 +4,6 @@ const passport = require('passport');
 const { forwardAuthenticated } = require('../config/auth');
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
-
 router.post('/login', (req, res, next) => {
   passport.authenticate('local',function (err, user) { 
     if(err){

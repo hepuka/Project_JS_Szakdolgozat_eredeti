@@ -75,7 +75,6 @@ exports.sutemenyekmindrender = (req, res) => {
         .catch(err =>{
             res.send(err);
         })
-
     
 }
 
@@ -106,7 +105,19 @@ exports.ordermindrender = (req, res) => {
 }
 
 exports.add_user = (req, res) =>{
-    res.render('add_user');
+    res.render("add_user", {users: req.user});    
+}
+
+exports.admin = (req, res) =>{
+    res.render("admin", {users: req.user});    
+}
+
+exports.warning = (req, res) =>{
+    res.render("warning");    
+}
+
+exports.chief = (req, res) =>{
+    res.render("chief", {users: req.user});    
 }
 
 exports.add_ital = (req, res) =>{
@@ -118,8 +129,7 @@ exports.add_kave = (req, res) =>{
 }
 
 exports.add_suti = (req, res) =>{
-    res.render('add_suti');
-}
+    res.render('add_suti');}
 
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})

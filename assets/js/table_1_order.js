@@ -35,14 +35,10 @@ function deleteRow(id) {
 
                     data.splice(i, 1);
                         localStorage.setItem('cart', JSON.stringify(data));
-                }
-           
+                }    
         }
-        window.location.reload();
-     
-                     
-                    } 
-
+        window.location.reload();                 
+    } 
     }  
 
     
@@ -119,7 +115,6 @@ var form=document.getElementById('form1');
 
 document.getElementById('submitbtn').addEventListener('click', () =>{
 
-
     var result = confirm('Termékek kifizetése?');
 
     if(result){
@@ -132,12 +127,10 @@ document.getElementById('submitbtn').addEventListener('click', () =>{
        
         }, 5000);
 
-        
   alert('Sikeres tranzakció!');
 
     }else{
         res.redirect('/table_1_order');
     }
-
 });
    

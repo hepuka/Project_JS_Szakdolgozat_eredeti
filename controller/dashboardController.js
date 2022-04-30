@@ -1,4 +1,11 @@
-  exports.dashboardView = (req, res)=>{
+exports.dashboardViewadmin = (req, res)=>{
+  res.render("admin", {
+    users: req.user
+  });
+     
+};
+
+exports.dashboardView = (req, res)=>{
     res.render("table_1_order", {
       users: req.user
     });
@@ -47,12 +54,7 @@
        
   }; 
   
-  exports.dashboardViewadmin = (req, res)=>{
-    res.render("admin", {
-      users: req.user
-    });
-       
-  };
+
 
   exports.dashboardVieworders = (req, res)=>{
     res.render("orders", {

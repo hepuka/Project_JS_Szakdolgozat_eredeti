@@ -19,11 +19,27 @@ button{
     padding-bottom: 40px;
 }
 
-
 .cim{
     text-align: center;
     margin-bottom: 50px;
     
+}
+
+.namebox{
+    text-align: center;
+    margin-top:150px;
+}
+
+.productcard{
+    text-align:center;
+    border-radius:15px;
+    
+}
+
+.navimg{
+
+    width:30px;
+    height:30px;
 }
 
 .col-2{
@@ -60,12 +76,6 @@ img{
     border-radius: 30px;
 }
 
-.navimg{
-
-    width:30px;
-    height:30px;
-}
-
 .login{
     margin-top: 20px; 
     
@@ -76,17 +86,6 @@ img{
   width: 700px;
 
 
-}
-
-.namebox{
-    text-align: center;
-    margin-top:150px;
-}
-
-.productcard{
-    text-align:center;
-    border-radius:15px;
-    
 }
 
 .table{

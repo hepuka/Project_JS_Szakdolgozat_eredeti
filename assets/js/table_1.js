@@ -13,6 +13,42 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
+    function italdiv_fun({ name, kiszereles, price,con}){
+      let div = document.createElement('div');
+      let btn=`btnFruit${con}`;
+      div.className="col-lg-3"
+      div.innerHTML = `
+
+      <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
+<div class="card-body text-dark" style="padding:0px;margin-bottom:0px">
+  <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
+  <h5 style="font-weight:bold" class="card-title">${name}</h5>
+</div>
+<div class="card-body">
+  <p class="card-text">Kiszerelés: ${kiszereles}</p>
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Egységár: ${price} Ft</li>
+</ul>
+
+<div class="card-body">
+<h6>Rendelés felvétele:</h6>
+  <div class="d-flex justify-content-center align-items-center">
+<div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
+
+  <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
+  class="btn btn-sm btn-outline-secondary">1.asztal</button>
+</div>
+<div class="btn-group" style="margin-top:10px;margin-bottom:10px">
+  <button id="${btn}" type="button" onclick="cart2('${name}','${price}','${con}','${btn}')"
+  class="btn btn-sm btn-outline-secondary">2.asztal</button>
+</div>
+      </div>
+</div>
+</div>
+      `;
+      return div;
+  }
 
     fetch("http://localhost:3000/api/kavek")
     .then(res => res.json())
@@ -33,47 +69,7 @@ var cart_n=document.getElementById('cart_n');
         })
     })
 
-     function italdiv_fun({ name, kiszereles, price,con}){
-        let div = document.createElement('div');
-        let btn=`btnFruit${con}`;
-        div.className="col-lg-3"
-        div.innerHTML = `
-
-        <div style="text-align:center;border-radius:15px" class="card mb-3 shadow-lg">
   
-  <div class="card-body text-dark" style="padding:0px;margin-bottom:0px">
-    <img src="/img/menu2.jpg" class="card-img-top" style="padding-bottom:10px">
-    <h5 style="font-weight:bold" class="card-title">${name}</h5>
-  </div>
-  <div class="card-body">
-    <p class="card-text">Kiszerelés: ${kiszereles}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Egységár: ${price} Ft</li>
-  </ul>
-
-  <div class="card-body">
-  <h6>Rendelés felvétele:</h6>
-    <div class="d-flex justify-content-center align-items-center">
-<div class="btn-group " style="margin-top:10px;margin-bottom:10px;">
-
-    <button id="${btn}" type="button" onclick="cart('${name}','${price}','${con}','${btn}')"
-    class="btn btn-sm btn-outline-secondary">1.asztal</button>
-</div>
-<div class="btn-group" style="margin-top:10px;margin-bottom:10px">
-    <button id="${btn}" type="button" onclick="cart2('${name}','${price}','${con}','${btn}')"
-    class="btn btn-sm btn-outline-secondary">2.asztal</button>
-</div>
-
-        </div>
-  </div>
-</div>
-
-             
-        `;
-        return div;
-    }
-   
     function kavediv_fun({ name, kiszereles, price,con}){
         let div = document.createElement('div');
         let btn=`btnFruit${con}`;
@@ -183,7 +179,6 @@ products=JSON.parse(localStorage.getItem("cart"));
 cart_n.innerHTML=`[${products.length}]`;
 
 alert("Termék a kosárhoz adva!")
-
 
 }
 

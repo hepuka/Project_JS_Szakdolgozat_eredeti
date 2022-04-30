@@ -5,12 +5,15 @@ const bodyparser = require("body-parser");
 const session=require('express-session');
 const flash=require('connect-flash');
 const passport = require('passport');
+const cors=require('cors');
 require('./config/passport')(passport);
 
 //conn to server,MongoDB
 const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config( { path : 'config.env'} )
+
+// Gives us access to variables set in the .env file via `process.env.VARIABLE_NAME` syntax
+require('dotenv').config( { path : 'config.env'} )
+
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI,{
@@ -21,8 +24,8 @@ mongoose.connect(process.env.MONGO_URI,{
 })
 .then(() =>{
   app.listen(3000, ()=> { 
-    console.log("Server is running on http://localhost:3000");
-    console.log('Database connected!');
+    console.log("A szerver elindult: http://localhost:3000");
+    console.log('MongoDB kapcsolódva!');
   });
 
 });
@@ -30,7 +33,7 @@ mongoose.connect(process.env.MONGO_URI,{
 app.use(morgan('tiny'));
 
 app.use(bodyparser.urlencoded({ extended : true}))
-
+app.use(cors());
 app.set("view engine", "ejs")
 
   app.use(session({

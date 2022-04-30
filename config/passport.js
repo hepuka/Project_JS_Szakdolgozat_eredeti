@@ -5,15 +5,12 @@ const User = require('../model/model');
 module.exports = function(passport) {
   passport.use(
     new LocalStrategy({ usernameField: 'username' }, (username, password, done) => {
-      
- 
       User.findOne({
         username: username
       }).then(user => {
         if (!user) {
           return done(null, false, { message: 'Nem regisztrált felhasználónév!' });
         }
-  
         bcrypt.compare(password, user.password, (err, isMatch) => {
           if (err) throw err;
           if (isMatch) {
@@ -25,7 +22,6 @@ module.exports = function(passport) {
       });
     })
   );
-
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });
