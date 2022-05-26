@@ -4,9 +4,9 @@ var caItems=[];
 var cart_n=document.getElementById('cart_n');
 
     fetch("http://localhost:3000/api/italok")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
+    .then(data => data.json())
+    .then(ital => {
+        ital.map(data => {
 
               
             italDIV.append(italdiv_fun(data));
@@ -51,19 +51,26 @@ var cart_n=document.getElementById('cart_n');
   }
 
     fetch("http://localhost:3000/api/kavek")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
+    .then(data => data.json())
+    .then(kave => {
+        kave.map(data => {
            
             kaveDIV.append(kavediv_fun(data));
         })
     })
 
 
-    fetch("http://localhost:3000/api/sutemenyek")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
+    fetch("http://localhost:3000/api/sutemenyek")  //hova küldöm a kérést,fetch egy promise-t ad vissza
+    
+    //promise meghívása a then-el, függvény a res és visszaadom a res.json()-t
+    //fetch res néven nem konkrét adatokat ad át amit kaptam a szervertől, 
+    //hanem egy response objektumot ami tartalmazza az összes adatot, fejléc stb
+    //a .json() metódus kicsomagolva a body-ban található adatot és azokat json parse metódussal értelmezi és egy promise-t ad vissza
+    .then(data => data.json()) 
+
+    //a kapott promise-ra is megtudom hívni a then-t és a json.map-el átadom a kicsomagolt adatokat
+    .then(suti => {
+        suti.map(data => {
            
             sutiDIV.append(sutidiv_fun(data));
         })
@@ -144,8 +151,6 @@ var cart_n=document.getElementById('cart_n');
         </div>
   </div>
 </div>
-
-             
         `;
         return div;
     }

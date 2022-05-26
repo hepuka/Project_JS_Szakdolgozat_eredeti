@@ -1,6 +1,7 @@
 const Userdb = require('../model/model');
 const bcrypt=require('bcryptjs');
 const { reset } = require('nodemon');
+const alert = require('alert');
 
 exports.create = (req,res)=>{
 
@@ -9,19 +10,21 @@ exports.create = (req,res)=>{
     
        
         if(!name || !role|| !email || !username || !password || !password2) {
-              
-            errors.push({ msg: 'Nincs mindegyik mező kitöltve!'});
+
+
+            alert('Üres mezők!');
+         
+           
         }
     
-         if(password !== password2){
-    
-            errors.push({ msg: 'Nem egyeznek a megadott jelszavak!'});
+        else if(password !== password2){
+            alert('Nem egyeznek a megadott jelszavak!');
+           
         }
     
         
         if(password.length < 5){
-    
-            errors.push({ msg: 'A jelszónak legalább 5 karakternek kell lennie!'});
+            alert('A jelszónak legalább 5 karakternek kell lennie!');
         }
     
         if(errors.length > 0){
@@ -43,8 +46,7 @@ exports.create = (req,res)=>{
            
            .then(user =>{
                if(user){
-                  
-                   errors.push({msg: 'Ez a felhasználónév már foglalt!'});
+                alert('Ez a felhasználónév már foglalt!');
                    res.render('add_user', {
                     errors,
                     name,
@@ -75,7 +77,8 @@ exports.create = (req,res)=>{
     
                         newUser.save()
                         .then(user => {
-                            req.flash('success_msg','Sikeres regisztráció, most már bejelentkezhet!');
+                            alert('Sikeres regisztráció, most már bejelentkezhet!');
+                          
                             res.redirect('/admin');
                         })
                         .catch(err => console.log(err));

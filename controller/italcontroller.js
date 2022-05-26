@@ -8,14 +8,12 @@ exports.create = (req,res)=>{
         return;
     }
 
-  
     const ital = new Italdb({
         name : req.body.name,
         kiszereles : req.body.kiszereles,
         price: req.body.price
     });
 
- 
     ital
         .save(ital)
         .then(data => {

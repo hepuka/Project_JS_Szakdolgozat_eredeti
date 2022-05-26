@@ -30,7 +30,7 @@ mongoose.connect(process.env.MONGO_URI,{
 
 });
 
-app.use(morgan('tiny'));
+//app.use(morgan('tiny'));
 
 app.use(bodyparser.urlencoded({ extended : true}))
 app.use(cors());
@@ -45,7 +45,7 @@ app.set("view engine", "ejs")
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
+//app.use(flash());
 
 app.use(express.json());
 
@@ -53,6 +53,6 @@ app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
-app.use('/', require('./routes/router'));
-app.use('/users', require('./routes/users'));
+app.use('/', require('./routes/admin_router'));
+app.use('/', require('./routes/alap_router'));
 

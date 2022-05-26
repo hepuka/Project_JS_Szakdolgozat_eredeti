@@ -1,107 +1,52 @@
 const axios = require('axios');
+const passport = require('passport');
 
-exports.usermindrender = (req, res) => {
+exports.login = (req, res) =>{
+    res.render("login");    
+}
 
-    axios.get('http://localhost:3000/api/users')
-        .then(function(response){
-            res.render('admin', { users : response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
+exports.loginout = (req, res) =>{
+    res.render("login");    
+}
 
+exports.logout = (req, res) =>{
+   
+    req.logout();
+    res.redirect('/users/login');   
+
+}
+
+exports.loginpost = (req, res) =>{
+    
+    passport.authenticate('local',function (err, user) { 
+        if(err){
+         res.redirect('/login')
+        } else{
+         if (! user) {
+           res.redirect('/login')
+         } else{
+           req.login(user, function(err){
+             if(err){
+               res.redirect('/login')
+             }else{
+    
+                    if(user.role == 'Admin'){
+                      res.redirect('/chief')
+                       }
+                   if(user.role == 'Alap'){
+                      res.redirect('/tables')
+                       }
+    
+             }
+           })
+         }
+        }
+     })(req, res);
     
 }
 
-exports.italokmindrender = (req, res) => {
-
-    axios.get('http://localhost:3000/api/italok')
-        .then(function(response){
-            res.render('table_1', {italok:response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
-}
-
-exports.italokmindrenderadmin = (req, res) => {
-
-    axios.get('http://localhost:3000/api/italok')
-        .then(function(response){
-            res.render('products', {italok:response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
-}
-
-
-exports.kavekmindrender = (req, res) => {
-
-    axios.get('http://localhost:3000/api/kavek')
-        .then(function(response){
-            res.render('table_2', { kavek:response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
-}
-
-exports.kavekmindrenderadmin = (req, res) => {
-
-    axios.get('http://localhost:3000/api/kavek')
-        .then(function(response){
-            res.render('products', { kavek:response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
-}
-
-exports.sutemenyekmindrender = (req, res) => {
-
-    axios.get('http://localhost:3000/api/sutemenyek')
-        .then(function(response){
-            res.render('table_1', { sutemenyek : response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-    
-}
-
-exports.sutemenyekmindrenderadmin = (req, res) => {
-
-    axios.get('http://localhost:3000/api/sutemenyek')
-        .then(function(response){
-            res.render('products', { sutemenyek : response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
-}
-
-exports.ordermindrender = (req, res) => {
-
-    axios.get('http://localhost:3000/api/orders')
-        .then(function(response){
-            res.render('orders', { orders : response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
-
-    
+exports.tables = (req, res) =>{
+    res.render("tables", {users: req.user});    
 }
 
 exports.add_user = (req, res) =>{
@@ -121,15 +66,93 @@ exports.chief = (req, res) =>{
 }
 
 exports.add_ital = (req, res) =>{
-    res.render('add_ital');
+    res.render('add_ital',{users: req.user});
 }
 
 exports.add_kave = (req, res) =>{
-    res.render('add_kave');
+    res.render('add_kave',{users: req.user});
 }
 
 exports.add_suti = (req, res) =>{
-    res.render('add_suti');}
+    res.render('add_suti',{users: req.user});
+}
+
+exports.table_1_order = (req, res) =>{
+    res.render('table_1_order',{users: req.user});
+}
+
+exports.insertOrder = (req, res) =>{
+    
+    var d=new Date();
+    var t=d.getTime();
+    var counter=t;
+    counter+=1;
+    
+    var order=new Order();
+    order.vegosszeg=req.body.total;
+    order.orderid=counter;
+    order.time= Date.now();
+    order.save((err,doc) =>{
+
+        if(!err){
+          
+         
+            res.redirect('/tables');
+         
+            
+        }else{
+            console.log('Error insertOrder: '+err);
+
+        }
+
+    });
+
+}
+
+
+exports.insertOrder2 = (req, res) =>{
+    
+    var d=new Date();
+    var t=d.getTime();
+    var counter=t;
+    counter+=1;
+    
+    var order2=new Order();
+    order2.vegosszeg=req.body.total;
+    order2.orderid=counter;
+    order2.time= Date.now();
+    order2.save((err,doc) =>{
+
+        if(!err){
+          
+         
+            res.redirect('/tables');
+         
+            
+        }else{
+            console.log('Error insertOrder: '+err);
+
+        }
+
+    });
+
+}
+
+exports.table_2_order = (req, res) =>{
+    res.render('table_2_order',{users: req.user});
+}
+
+exports.usermindrender = (req, res) => {
+
+    axios.get('http://localhost:3000/api/users')
+        .then(function(response){
+            res.render('admin', { users : response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+    
+}
 
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
@@ -139,4 +162,40 @@ exports.update_user = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
+}
+
+exports.deleteid = (req, res) =>{
+
+    Order.findByIdAndRemove(req.params.id,(err,docs) =>{
+
+        if(!err){
+          
+            res.redirect('/orders');
+     
+        }else{
+
+            console.log('Error in delete: '+err);
+        }
+    });
+    
+}
+
+exports.ensureAuthenticated = (req, res,next) =>{
+
+    if (req.isAuthenticated()) {
+        return next();
+      }else{
+      res.redirect('/users/login');
+
+      }
+    
+}
+
+exports.onlyforadmin = (req, res,next) =>{
+
+    if (req.user.role !== 'Admin'){
+        return res.redirect('/warning');
+    }
+    next();
+    
 }

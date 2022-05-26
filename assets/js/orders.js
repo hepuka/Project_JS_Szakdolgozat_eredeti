@@ -1,14 +1,14 @@
 
    fetch("http://localhost:3000/api/orders")
-    .then(res => res.json())
-    .then(json => {
-        json.map(data => {
+    .then(data => data.json())
+    .then(orders => {
+        orders.map(data => {
            
-            orderstabla.append(tdorder_fun(data));
+            orderstabla.append(tdorder_function(data));
         })
     })
 
-  function tdorder_fun({_id,orderid, vegosszeg, time}){
+  function tdorder_function({orderid, vegosszeg, time}){
         let tr = document.createElement('tr');
         tr.innerHTML = `
     <tr class="table-default border-0 selected" style="text-align: center;">
@@ -17,7 +17,7 @@
       
         <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${time}</td>
         <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" href="/orders/delete/${_id}">Törlés</a></td>
+            <a>Fizetve</a></td>
         </td></td>
 
     </tr>
