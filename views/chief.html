@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KUNPAO's CAFE</title>
+
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/5/sandstone/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="popupS.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="chief">
+          <img
+            src="/img/cafe.png"
+            class="d-inline-block align-top navimg"
+            alt=""
+          />
+          KUNPAO's CAFE</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Adminisztráció</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="add-user"
+                  >Új alkalmazott felvétele</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="admin"
+                  >Alkalmazottak lekérdezése</a
+                >
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Termékek</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="add-ital">Új Ital felvétele</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="add-kave">Új Kávé felvétele</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="add-suti"
+                  >Új Sütemény felvétele</a
+                >
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="products"
+                  >Termékek lekérdezése</a
+                >
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="orders">Rendelés összesítő</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item dropdown">
+                                  <a class="dropdown-item" href="/users/logout"
+                    >Kijelentkezés</a
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  style="color: white"
+                  >Bejelentkezve:
+                  <!-- <%= users.name %> --></a
+                >
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/users/logout"
+                    >Kijelentkezés</a
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="welcome">
+      <h1>KUNPAO's CAFE MANAGEMENT SYSTEM</h1>
+
+      <img src="/img/cafe.png" alt="cafe.jpg" />
+      <div class="namebox">
+        <p class="mt-5 mb-3">Készítette: Kun-Fagyal Zoltán</p>
+        <p class="mt-2 mb-3">mérnökinformatikus hallgató, levelező tagozat</p>
+        <p class="mt-2 mb-3">&copy; 2021–2022</p>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
