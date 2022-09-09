@@ -1,22 +1,9 @@
 const axios = require("axios");
 const passport = require("passport");
-const path = require("path");
 
 exports.login = (req, res) => {
   res.render("login");
 };
-
-/* exports.htmllogin = (req, res) => {
-  res.sendFile(path.join(__dirname, "../index.html"));
-};
-
-exports.htmlchief = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/chief.html"));
-}; */
-
-/* exports.htmltables = (req, res) => {
-  res.sendFile(path.join(__dirname, "../views/tables.html"));
-}; */
 
 exports.loginout = (req, res) => {
   res.render("login");
