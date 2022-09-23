@@ -1,40 +1,41 @@
 <%- include('include/_header.ejs') %>
-<div class="welcome">
-  <h1 style="margin-top: 200px;">KUNPAO's CAFE MANAGEMENT SYSTEM</h1>
-    
-  </div>
- <div class="login d-flex justify-content-center">
- <div class="loginplace">
-    <div class="col-md-6 m-auto">
-        <form action="/users/login" method="POST">
-          <div class="form-group">
-            <label for="username" class="form-label">Felhasználónév</label>
-            <input
-              type="username"
-              id="username"
-              name="username"
-              class="form-control"
-              placeholder="Add meg a felhasználóneved"                           
-            />
+<div class="welcome d-flex justify-content-center">
+  <h1>KUNPAO's CAFE MANAGEMENT SYSTEM</h1>
+</div>
+<div class="login d-flex justify-content-center">
+  <div class="loginplace">
+    <div class="col-7 m-auto">
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="username" class="form-label">Felhasználónév</label>
+          <input
+            type="username"
+            id="username"
+            name="username"
+            class="form-control"
+            placeholder="Add meg a felhasználóneved"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Jelszó</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Add meg a jelszavad"
+          />
+        </div>
+        <div class="button">
+          <div class="row justify-content-center">
+            <button type="submit" class="btn btn-secondary btn-block col-6">
+              Belépés
+            </button>
           </div>
-          <div class="form-group">
-            <label for="password" class="form-label">Jelszó</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Add meg a jelszavad"
-            />
-          </div>
-          <div class="button">
-            <div class="row justify-content-center">  
-              <button type="submit" class="btn btn-secondary btn-block col-6">Belépés</button>          
-            </div>  
-          </div> 
-        </form>
+        </div>
+      </form>
     </div>
-  </div>  
+  </div>
 </div>
 
 <%- include('include/_footer.ejs') %>

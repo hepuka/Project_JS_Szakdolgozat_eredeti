@@ -1,29 +1,23 @@
-<%- include('include/_header.ejs') %>
-<%- include('include/_navbar.ejs') %>
+<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
+<div class="container">
+  <div class="col-12">
+    <h3 class="text-secondary" style="text-align: center">
+      Megrendelés összesítő
+    </h3>
 
-<div class="container shadow">
-
-    <div class="col-12">
-
-        <h3 class="text-secondary" style="text-align: center;">Megrendelés összesítő</h3>   
-              
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th class="col-2">Megrendelés azonosító</th>
-                    <th class="col-2">Végösszeg</th>
-                    <th class="col-2">Rendelés ideje</th>
-                    <th class="col-2">Műveletek</th>
-                  </tr>
-                </thead>
-                <tbody id="orderstabla">
-    
-                </tbody>
-              </table>
-       
-      </div>
-    
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-2">Megrendelés azonosító</th>
+          <th class="col-2">Végösszeg</th>
+          <th class="col-2">Rendelés ideje</th>
+          <th class="col-2">Műveletek</th>
+        </tr>
+      </thead>
+      <tbody id="orderstabla"></tbody>
+    </table>
+  </div>
 </div>
 
 <script src="/js/orders.js"></script>
