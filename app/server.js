@@ -8,7 +8,7 @@ require("../config/passport")(passport);
 const path = require("path");
 require("dotenv").config({ path: "config.env" });
 const mongoose = require("mongoose");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 mongoose
   .connect(process.env.MONGO_URI, {
