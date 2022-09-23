@@ -1,46 +1,40 @@
-<%- include('include/_header.ejs') %>
-<%- include('include/_navbar.ejs') %>
+<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
- <main role="main">
-  <div class="container shadow">
-   
-      <h3 id="italok" class="text-secondary" style="text-align: center;">Italok</h3>
-     
-      <div class="col-lg-12">
-   
-        <div id="italDIVadmin" class="row">
-		
-           
-        </div>
+<main role="main">
+  <div class="container">
+    <h3 id="italok" class="text-secondary" style="text-align: center">
+      Italok
+    </h3>
 
-    </div>
-
-
-    <h2 id="kavek" class="text-secondary" style="text-align: center; margin-top: 30px;">Kávék</h2>
-     
     <div class="col-lg-12">
- 
-      <div id="kaveDIVadmin" class="row">
-  
-         
-      </div>
-
-  </div>
-
-  <h2 id="sutik" class="text-secondary" style="text-align: center; margin-top: 30px;">Sütemények</h2>
-   
-  <div class="col-lg-12">
-
-    <div id="sutiDIVadmin" class="row">
-
-       
+      <div id="italDIVadmin" class="row"></div>
     </div>
 
-</div>
+    <h2
+      id="kavek"
+      class="text-secondary"
+      style="text-align: center; margin-top: 30px"
+    >
+      Kávék
+    </h2>
 
-</div>
+    <div class="col-lg-12">
+      <div id="kaveDIVadmin" class="row"></div>
+    </div>
 
-  </main>
+    <h2
+      id="sutik"
+      class="text-secondary"
+      style="text-align: center; margin-top: 30px"
+    >
+      Sütemények
+    </h2>
+
+    <div class="col-lg-12">
+      <div id="sutiDIVadmin" class="row"></div>
+    </div>
+  </div>
+</main>
 
 <script src="/js/products.js"></script>
 <%- include('include/_footer.ejs') %>

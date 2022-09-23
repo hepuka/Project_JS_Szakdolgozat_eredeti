@@ -1,20 +1,13 @@
-<%- include('include/_header.ejs') %>
-<%- include('include/_navbar.ejs') %>
+<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
-  <main id="site-main">
-    <div class="container shadow">
-             <h3 class="text-secondary text-center">
-                Új Ital felvétele
-              </h3>
-                    
-              <form action="/api/italok" method="POST" id="add_ital">
+<main id="site-main">
+  <div class="container">
+    <h3 class="text-secondary text-center">Új Ital felvétele</h3>
 
-                <%- include('include/_ujtermekform.ejs') %>
-
-            </form>
-    </div>
+    <form action="/api/italok" method="POST" id="add_ital">
+      <%- include('include/_ujtermekform.ejs') %>
+    </form>
+  </div>
 </main>
 
 <%- include('include/_footer.ejs') %>
-
-

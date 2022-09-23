@@ -13,7 +13,7 @@ const { dashboardViewproducts } = require("../controller/dashboardController");
 route.get("/", services.login);
 route.get("/users/login", services.loginout);
 route.post("/users/login", services.loginpost);
-route.get("/users/logout", services.logout);
+route.get("/users/login", services.logout);
 route.get(
   "/update-user",
   services.ensureAuthenticated,

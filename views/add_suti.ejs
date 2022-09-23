@@ -1,18 +1,13 @@
-<%- include('include/_header.ejs') %>
-<%- include('include/_navbar.ejs') %>
- 
-  <main id="site-main">
-    <div class="container shadow">
-             <h3 class=" text-secondary text-center">
-                Új Sütemény felvétele
-              </h3>
-                    
-              <form action="/api/sutemenyek" method="POST" id="add_suti">
+<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
-                <%- include('include/_ujtermekform.ejs') %>
+<main id="site-main">
+  <div class="container">
+    <h3 class="text-secondary text-center">Új Sütemény felvétele</h3>
 
-            </form>
-    </div>
+    <form action="/api/sutemenyek" method="POST" id="add_suti">
+      <%- include('include/_ujtermekform.ejs') %>
+    </form>
+  </div>
 </main>
 
 <%- include('include/_footer.ejs') %>

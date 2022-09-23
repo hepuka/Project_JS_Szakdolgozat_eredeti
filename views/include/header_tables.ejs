@@ -1,0 +1,61 @@
+<header class="header">
+  <div class="header-main">
+    <div class="logo">
+      <a href="#">KUNPAO's COFFEE MANAGEMENT SYSTEM</a>
+    </div>
+    <div class="open-nav-menu">
+      <span></span>
+    </div>
+    <div class="menu-overlay"></div>
+    <nav class="nav-menu">
+      <div class="close-nav-menu">
+        <img src="img/close.svg" alt="close" />
+      </div>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="table_1">Rendelés felvétele</a>
+        </li>
+
+        <li class="menu-item menu-item-has-children">
+          <a href="#" data-toggle="sub-menu"
+            >Rendelés összesítő<i class="plus"></i
+          ></a>
+          <ul class="sub-menu">
+            <li class="menu-item">
+              <a href="table_1_order">1.asztal</a>
+            </li>
+            <li class="menu-item">
+              <a href="table_2_order">2.asztal</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item menu-item-has-children">
+          <a href="#" data-toggle="sub-menu"
+            >Kosár törlése<i class="plus"></i
+          ></a>
+          <ul class="sub-menu">
+            <li class="menu-item">
+              <a href="table_1_order" onclick="clean()"
+                >1.asztal<i id="cart_n"></i
+              ></a>
+            </li>
+            <li class="menu-item">
+              <a href="table_2_order" onclick="clean()"
+                >2.asztal<i id="cart_n2"></i
+              ></a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item menu-item-has-children">
+          <a href="#" data-toggle="sub-menu"><i class="plus"></i></a>
+          <ul class="sub-menu">
+            <li class="menu-item">
+              <a href="/users/logout">Kijelentkezés</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

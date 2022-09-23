@@ -1,23 +1,51 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-lg">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="chief">
-      <img src="/img/cafe.png" class="d-inline-block align-top navimg" alt="">  KUNPAO's CAFE</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <img src="/img/cafe.png" class="d-inline-block align-top navimg" alt="" />
+      KUNPAO's CAFE</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor01"
+      aria-controls="navbarColor01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Adminisztráció</a>
+          <a
+            class="nav-link dropdown-toggle active"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Adminisztráció</a
+          >
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="add-user">Új alkalmazott felvétele</a>
+            <a class="dropdown-item" href="add-user"
+              >Új alkalmazott felvétele</a
+            >
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="admin">Alkalmazottak lekérdezése</a>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Termékek</a>
+          <a
+            class="nav-link dropdown-toggle active"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Termékek</a
+          >
           <div class="dropdown-menu">
             <a class="dropdown-item" href="add-ital">Új Ital felvétele</a>
             <div class="dropdown-divider"></div>
@@ -32,14 +60,11 @@
           <a class="nav-link active" href="orders">Rendelés összesítő</a>
         </li>
       </ul>
-      <div class="d-flex" >
+      <div class="d-flex">
         <ul class="navbar-nav me-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color: white;">Bejelentkezve: <%= users.name %></a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/users/logout">Kijelentkezés</a>
-          </div>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/users/login">Kijelentkezés</a>
+          </li>
         </ul>
       </div>
     </div>

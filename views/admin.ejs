@@ -1,25 +1,23 @@
-<%- include('include/_header.ejs') %>
-<%- include('include/_navbar.ejs') %>
+<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
-   
-    <main id="site-main">
-        <div class="container shadow">
-          <h3 class="cim text-secondary">Alkalmazotti adminisztráció</h3>     
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="col-2">Név</th>
-                            <th class="col-2">Felhasználónév</th>
-                            <th class="col-2">Email</th>
-                            <th class="col-2">Jogosultság</th>
-                            <th class="col-2" colspan="2">Műveletek</th>                           
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <%- include('include/_show') %>
-                    </tbody>
-                </table>
-        </div>
-    </main>
-    
-    <%- include('include/_footer.ejs') %>
+<main id="site-main">
+  <div class="container">
+    <h3 class="cim text-secondary">Alkalmazotti adminisztráció</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="col-2">Név</th>
+          <th class="col-2">Felhasználónév</th>
+          <th class="col-2">Email</th>
+          <th class="col-2">Jogosultság</th>
+          <th class="col-2" colspan="2">Műveletek</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%- include('include/_show') %>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<%- include('include/_footer.ejs') %>
