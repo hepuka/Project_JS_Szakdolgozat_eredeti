@@ -1,19 +1,20 @@
 <% for(var i = 0; i < users.length; i++) { %>
-<tr class="table-default border-0">
-    <td><%= users[i].name %></td>
-    <td><%= users[i].username %></td>
-    <td><%= users[i].email %></td>
-    <td><%= users[i].role %></td>
-    <td> 
-        <a href="/update-user?id=<%= users[i]._id%>" class="btn update">
-            <span class="btn btn-secondary btn-sm">Szerkesztés</span>
-        </a>
+<tr class="showtable table-default border-0">
+  <td data-label="Név"><%= users[i].name %></td>
+  <td data-label="Felhasználónev"><%= users[i].username %></td>
+  <td data-label="Email"><%= users[i].email %></td>
+  <td data-label="Jogosultság"><%= users[i].role %></td>
+  <td data-label="Módosít">
+    <a href="/update-user?id=<%= users[i]._id%>" class="btn update">
+      <span class="btn btn-secondary btn-sm">Szerkesztés</span>
+    </a>
+  </td>
+  <td data-label="Eltávolítás">
+    <a class="btn delete" data-id="<%" ="users[i]._id%"
+      >>
 
-    </td>
-    <td> 
-        <a class="btn delete" data-id=<%= users[i]._id%> >
-            <span class="btn btn-dark btn-sm">Törlés</span>
-        </a>
-    </td>
+      <span class="btn btn-secondary btn-sm">Törlés</span>
+    </a>
+  </td>
 </tr>
 <% } %>

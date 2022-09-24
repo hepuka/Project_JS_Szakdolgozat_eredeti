@@ -1,16 +1,15 @@
 fetch("http://localhost:3000/api/users")
-.then(data => data.json())
-.then(users => {
-    users.map(data => {
+  .then((data) => data.json())
+  .then((users) => {
+    users.map((data) => {
+      admintabla.append(tadmin_function(data));
+    });
+  });
 
-       admintabla.append(tadmin_function(data));
-    })
-})
+function tadmin_function({ _id, name, username, email, role }) {
+  let tr = document.createElement("tr");
 
-function tadmin_function({_id,name, username, email, role}){
-    let tr = document.createElement('tr');
- 
-    tr.innerHTML = `
+  tr.innerHTML = `
 <tr class="table-default border-0 selected" style="text-align: center;">
     <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${name}</td>
     <td class="col-3" style="padding-top: 15px; border: none;text-align: center">${username}</td>
@@ -38,5 +37,5 @@ function tadmin_function({_id,name, username, email, role}){
 
 </tr>
     `;
-    return tr;
+  return tr;
 }

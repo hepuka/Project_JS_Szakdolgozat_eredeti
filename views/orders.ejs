@@ -1,22 +1,22 @@
 <%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
 
-<div class="container">
-  <div class="col-12">
-    <h3 class="text-secondary" style="text-align: center">
-      Megrendelés összesítő
-    </h3>
+<h3 class="cim text-secondary">Rendelés összesítő</h3>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th class="col-2">Megrendelés azonosító</th>
-          <th class="col-2">Végösszeg</th>
-          <th class="col-2">Rendelés ideje</th>
-          <th class="col-2">Műveletek</th>
-        </tr>
-      </thead>
-      <tbody id="orderstabla"></tbody>
-    </table>
+<div class="d-flex justify-content-center">
+  <div class="mainplace">
+    <div>
+      <table class="otable table">
+        <thead>
+          <tr>
+            <th class="col-2">Megrendelés azonosító</th>
+            <th class="col-2">Végösszeg</th>
+            <th class="col-2">Rendelés ideje</th>
+            <th class="col-2">Műveletek</th>
+          </tr>
+        </thead>
+        <tbody id="orderstabla"></tbody>
+      </table>
+    </div>
   </div>
 </div>
 

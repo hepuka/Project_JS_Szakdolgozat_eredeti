@@ -1,5 +1,6 @@
 const axios = require("axios");
 const passport = require("passport");
+const Orderdb = require("../model/ordermodel");
 
 exports.login = (req, res) => {
   res.render("login");
@@ -80,7 +81,7 @@ exports.insertOrder = (req, res) => {
   var counter = t;
   counter += 1;
 
-  var order = new Order();
+  var order = new Orderdb();
   order.vegosszeg = req.body.total;
   order.orderid = counter;
   order.time = Date.now();
@@ -99,7 +100,7 @@ exports.insertOrder2 = (req, res) => {
   var counter = t;
   counter += 1;
 
-  var order2 = new Order();
+  var order2 = new Orderdb();
   order2.vegosszeg = req.body.total;
   order2.orderid = counter;
   order2.time = Date.now();
