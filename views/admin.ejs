@@ -1,23 +1,45 @@
-<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('include/header_admin.ejs') %>
+      <div class="content_data">
+        <h2>Alkalmazotti adminisztráció</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Név</th>
+                <th>Felhasználónév</th>
+                <th>@Email</th>
+                <th>Jogosultság</th>
+                <th>Műveletek</th>
+              </tr>
+            </thead>
 
-<h3 class="cim text-secondary">Alkalmazottak lekérdezése</h3>
-
-<div class="d-flex justify-content-center">
-  <div class="mainplace">
-    <div>
-      <table class="table">
-        <thead>
-          <th class="col-2">Név</th>
-          <th class="col-2">Felhasználónév</th>
-          <th class="col-2">Email</th>
-          <th class="col-2">Jogosultság</th>
-          <th class="col-2" colspan="2">Műveletek</th>
-        </thead>
-
-        <tbody></tbody>
-      </table>
+            <tbody>
+              <%- include('include/_show') %>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<%- include('include/_footer.ejs') %>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

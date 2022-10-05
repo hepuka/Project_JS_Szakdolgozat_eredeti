@@ -1,83 +1,61 @@
-var products=JSON.parse(localStorage.getItem('cart'));
-var cartItems=[];
-var cart_n=document.getElementById('cart_n');
-var table=document.getElementById('table');
-var total=0;
-  
-//kosár tartalma
-function tableHTML(i){
+var products = JSON.parse(localStorage.getItem("cart"));
+var cartItems = [];
+var cart_n = document.getElementById("cart_n");
+var table = document.getElementById("table");
+var total = 0;
 
-    return `
-            <tr>
-            <td style="text-align:center">${i+1}</td>
-            <td style="text-align:center">${products[i].name}</td>
-            <td id="mennyiseg" style="text-align:center">1</td>      
-            <td style="text-align:center">${products[i].price} Ft</td>
-            <td style="text-align:center;border:none">                                
-            <a class="btn btn-dark" onclick="deleteRow(${products[i].id})">Törlés</a></td>                   
+//kosár tartalma
+function tableHTML(i) {
+  return `
+            <tr class="ordertable">
+            <td>${i + 1}</td>
+            <td>${products[i].name}</td>
+            <td id="mennyiseg">1</td>      
+            <td>${products[i].price} Ft</td>
+            <td>                                
+            <a href="" onclick="deleteRow(${
+              products[i].id
+            })">Törlés</a></td>             
             </tr>
     `;
 }
 //kosár tartalma vége
 
-
 //kosár egy elemének törlése
-function deleteRow(id) { 
+function deleteRow(id) {
+  var result = confirm("Rendelés törlése?");
+  if (result) {
+    var data = localStorage.getItem("cart");
+    data = JSON.parse(data);
 
-    var result = confirm("Rendelés törlése?");
-    if (result) {
-        var data = localStorage.getItem('cart')
-        data = JSON.parse(data);
-
-        for(var i=0;i<data.length;i++){
-
-                if(data[i].id == id){
-
-                    data.splice(i, 1);
-                        localStorage.setItem('cart', JSON.stringify(data));
-                }    
-        }
-        window.location.reload();                 
-    } 
-    }  
-
-    
-//kosár kiürítése
-function clean(){
-
-    var result = confirm("Törli a kosár tartalmát?");
-
-    if(result){
- localStorage.removeItem('cart');
-
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].id == id) {
+        data.splice(i, 1);
+        localStorage.setItem("cart", JSON.stringify(data));
+      }
     }
-    
+    window.location.reload();
+  }
+}
 
+//kosár kiürítése
+function clean() {
+  var result = confirm("Törli a kosár tartalmát?");
+
+  if (result) {
+    localStorage.removeItem("cart");
+  }
 }
 //kosár kiürítése vége
 
-(()=>{
+(() => {
+  for (let index = 0; index < products.length; index++) {
+    table.innerHTML += tableHTML(index);
+    total = total + parseInt(products[index].price);
+  }
 
-    for (let index = 0; index < products.length; index++) {
-        
-        table.innerHTML+=tableHTML(index);
-        total=total+parseInt(products[index].price);
-        
-    }
+  table.innerHTML += `
 
-    table.innerHTML+=`
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-        </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-        </tr>
             <tr class="no-border">
                 <td></td>
                 <td></td>
@@ -107,30 +85,23 @@ function clean(){
 
     `;
 
-    products=JSON.parse(localStorage.getItem('cart'));
-
+  products = JSON.parse(localStorage.getItem("cart"));
 })();
 
-var form=document.getElementById('form1');
+var form = document.getElementById("form1");
 
-document.getElementById('submitbtn').addEventListener('click', () =>{
+document.getElementById("submitbtn").addEventListener("click", () => {
+  var result = confirm("Termékek kifizetése?");
 
-    var result = confirm('Termékek kifizetése?');
+  if (result) {
+    localStorage.removeItem("cart");
 
-    if(result){
-
-    localStorage.removeItem('cart')
-        
     setTimeout(() => {
-         
-        form.submit();
-       
-        }, 5000);
+      form.submit();
+    }, 5000);
 
-  alert('Sikeres tranzakció!');
-
-    }else{
-        res.redirect('/table_1_order');
-    }
+    alert("Sikeres tranzakció!");
+  } else {
+    res.redirect("/table_1_order");
+  }
 });
-   

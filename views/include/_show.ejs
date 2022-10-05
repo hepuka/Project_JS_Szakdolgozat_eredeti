@@ -1,0 +1,13 @@
+<% for(var i = 0; i < users.length; i++) { %>
+<tr class="showtable table-default border-0">
+  <td data-label="Név"><%= users[i].name %></td>
+  <td data-label="Felhasználónev"><%= users[i].username %></td>
+  <td data-label="Email"><%= users[i].email %></td>
+  <td data-label="Jogosultság"><%= users[i].role %></td>
+  <td data-label="Módosít">
+    <a href="/update-user?id=<%= users[i]._id%>" class="btn update">
+      <span class="btn btn-secondary btn-sm">Szerkesztés</span>
+    </a>
+  </td>
+</tr>
+<% } %>

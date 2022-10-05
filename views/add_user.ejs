@@ -1,87 +1,94 @@
-<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
-
-<h3 class="cim text-secondary">Új alkalmazott felvétele</h3>
-
-<div class="d-flex justify-content-center">
-  <div class="loginplace">
-    <div class="col-9 col-xl-6 col-md-5 m-auto">
-      <form action="/api/users" method="POST" id="add_user">
-        <div class="form-group">
-          <label for="name" class="form-label">Név</label>
-          <input type="hidden" name="id" class="form-control" value="" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('include/header_admin.ejs') %>
+      <div class="content_data">
+        <h2>Új alkalmazott felvétele</h2>
+        <form
+          action="/api/users"
+          method="POST"
+          id="add_user"
+          class="form"
+          autocomplete="off"
+        >
+          <label for="name"><span id="loginspan">Név</span></label>
           <input
             type="text"
-            name="name"
-            class="form-control"
-            value=""
             placeholder="Add meg a teljes nevet!"
+            name="name"
+            id="name"
+            required
           />
-        </div>
-        <div class="form-group">
-          <label for="username" class="text-default">Felhasználónév</label>
-          <input
-            type="text"
-            name="username"
-            class="form-control"
-            value=""
-            placeholder="Adj meg egy felhasználónevet!"
-          />
-        </div>
-        <div class="form-group">
-          <label for="email" class="text-default important">Email</label>
-          <input
-            type="text"
-            name="email"
-            class="form-control"
-            value=""
-            placeholder="valami@valami.com"
-          />
-        </div>
-        <div class="form-group">
-          <label for="role" class="text-default">Jogosultság</label>
-          <input
-            type="text"
-            name="role"
-            class="form-control"
-            value=""
-            placeholder="Admin vagy Alap"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password" class="text-default">Jelszó</label>
-          <input
-            type="text"
-            name="password"
-            class="form-control"
-            value=""
-            placeholder="Adj meg egy jelszavat!"
-          />
-        </div>
-        <div class="form-group">
-          <label for="password2" class="text-default"
-            >Jelszó megerősítése</label
-          >
-          <input
-            type="text"
-            name="password2"
-            class="form-control"
-            value=""
-            placeholder="Add meg a jelszavat újra!"
-          />
-        </div>
-        <div class="button">
-          <div class="row justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-secondary btn-block col-7 col-md-5 update"
-            >
-              Belépés
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
-<%- include('include/_footer.ejs') %>
+          <label for="username"
+            ><span id="loginspan">Felhasználónév</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Adj meg egy felhasználónevet!"
+            name="username"
+            id="username"
+            required
+          />
+
+          <label for="email"> <span id="loginspan">Email</span></label>
+          <input
+            type="email"
+            placeholder="Adj meg egy létező email címet!"
+            name="email"
+            id="email"
+            required
+          />
+
+          <label for="role"><span id="loginspan">Jogosultság</span></label>
+          <input
+            type="text"
+            placeholder="Admin vagy Alap"
+            name="role"
+            id="role"
+            required
+          />
+
+          <label for="password"> <span id="loginspan">Jelszó</span> </label>
+          <input
+            type="password"
+            placeholder="Adj meg egy jelszót!"
+            name="password"
+            id="password"
+            required
+          />
+
+          <label for="password2">
+            <span id="loginspan">Jelszó megerősítése</span>
+          </label>
+          <input
+            type="password"
+            placeholder="Add meg a jelszavat újra!"
+            name="password2"
+            id="password2"
+            required
+          />
+
+          <button id="button" type="submit">Mentés</button>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

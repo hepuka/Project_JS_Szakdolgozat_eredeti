@@ -1,28 +1,35 @@
-<%- include('include/_header.ejs') %> <%- include('include/_navbartables.ejs')
-%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('include/header_tables.ejs') %>
+      <d class="content_data">
+        <h2>Rendelés felvétele</h2>
+        <h2 id="italok">Italok</h2>
+        <div class="card_container" id="italDIV"></div>
+        <h2 id="kavek">Kávék</h2>
+        <div class="card_container" id="kaveDIV"></div>
 
-<div class="container">
-  <h3 class="cim text-secondary">Rendelés felvétele</h3>
-
-  <div class="col-12 col-lg-12">
-    <h2 id="italok" class="text-secondary">Italok</h2>
-    <div>
-      <div id="italDIV" class="row"></div>
+        <h2 id="sutik">Sütemények</h2>
+        <div class="card_container" id="sutiDIV"></div>
+      </d iv>
     </div>
-
-    <h2 id="kavek" class="text-secondary" style="margin-top: 30px">Kávék</h2>
-    <div class="col-lg-12">
-      <div id="kaveDIV" class="row"></div>
-    </div>
-
-    <h2 id="sutik" class="text-secondary" style="margin-top: 30px">
-      Sütemények
-    </h2>
-    <div class="col-lg-12">
-      <div id="sutiDIV" class="row"></div>
-    </div>
-  </div>
-
-  <script src="/js/table_1.js"></script>
-  <%- include('include/_footer.ejs') %>
-</div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"
+  ></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/table_1.js"></script>
+  </body>
+</html>

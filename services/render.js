@@ -11,8 +11,8 @@ exports.loginout = (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  req.logout();
-  res.render("/users/login");
+  req.logOut();
+  res.redirect("/users/login");
 };
 
 exports.loginpost = (req, res) => {

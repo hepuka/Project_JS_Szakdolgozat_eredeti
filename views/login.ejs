@@ -1,44 +1,43 @@
-<%- include('include/_header.ejs') %>
-<div class="welcome d-flex justify-content-center">
-  <h1>KUNPAO's CAFE MANAGEMENT SYSTEM</h1>
-</div>
-<div class="login d-flex justify-content-center">
-  <div class="loginplace">
-    <div class="col-9 col-xl-6 col-md-5 m-auto">
-      <form action="/users/login" method="POST">
-        <div class="form-group">
-          <label for="username" class="form-label">Felhasználónév</label>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <h1 class="login">KUNPAO's COFFEE MANAGEMENT SYSTEM</h1>
+        <img src="/img/cafe_avatar.png" alt="" />
+        <form action="/users/login" method="POST" class="form">
+          <label for="username"
+            ><span id="loginspan">Felhasználónév</span></label
+          >
           <input
-            type="username"
-            id="username"
+            type="text"
+            placeholder="Add meg a felhasználónevet"
             name="username"
-            class="form-control"
-            placeholder="Add meg a felhasználóneved"
+            id="username"
+            required
           />
-        </div>
-        <div class="form-group">
-          <label for="password" class="form-label">Jelszó</label>
+          <label for="password"><span id="loginspan">Jelszó</span></label>
           <input
             type="password"
-            id="password"
+            placeholder="Add meg a jelszót"
             name="password"
-            class="form-control"
-            placeholder="Add meg a jelszavad"
+            id="password"
+            required
           />
-        </div>
-        <div class="button">
-          <div class="row justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-secondary btn-block col-7 col-md-5"
-            >
-              Belépés
-            </button>
-          </div>
-        </div>
-      </form>
+          <button id="button" type="submit">Belépés</button>
+        </form>
+      </div>
     </div>
-  </div>
-</div>
-
-<%- include('include/_footer.ejs') %>
+    <script src="/assets/js/index.js"></script>
+  </body>
+</html>

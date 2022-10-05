@@ -1,7 +1,27 @@
-<%- include('include/_header.ejs') %>
-
-<%- include('include/_navbartables.ejs') %>
-  
-<%- include('include/_welcomepage.ejs') %>
-
-<%- include('include/_footer.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('include/header_tables.ejs') %>
+      <div id="small_content" class="content">
+        <img src="/img/cafe.png" alt="cafe.jpg" />
+        <div class="footer">
+          <p>Készítette: Kun-Fagyal Zoltán</p>
+          <p>mérnökinformatikus hallgató, levelező tagozat</p>
+          <p>&copy; 2021–2022</p>
+        </div>
+      </div>
+    </div>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

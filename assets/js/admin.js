@@ -23,19 +23,24 @@ function tadmin_function({ _id, name, username, email, role }) {
         </a>
 
     </td>
-
-    <td> 
-    <a class="btn delete" data-id=<%= users[i]._id%> 
-        <span class="btn btn-dark btn-sm">Törlés</span>
-    </a>
-</td>
-
     }
-
-
-
 
 </tr>
     `;
   return tr;
 }
+
+/* function delete_function(id) {
+  var request = {
+    url: `http://localhost:3000/api/users/${id}`,
+    method: "DELETE",
+  };
+
+  if (confirm("Valóban elszeretnéd távolítani ezt a felhasználót?")) {
+    $.ajax(request).done(function (response) {
+      alert("Felhasználó sikeresen eltávolítva!");
+      location.reload();
+    });
+  }
+}
+ */

@@ -1,14 +1,16 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
 const bodyparser = require("body-parser");
 const session = require("express-session");
+const flash = require("connect-flash");
 const passport = require("passport");
 const cors = require("cors");
 require("./config/passport")(passport);
 const path = require("path");
 require("dotenv").config({ path: "config.env" });
 const mongoose = require("mongoose");
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 mongoose
   .connect(process.env.MONGO_URI, {

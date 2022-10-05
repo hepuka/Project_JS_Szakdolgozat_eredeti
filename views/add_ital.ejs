@@ -1,56 +1,57 @@
-<%- include('include/_header.ejs') %> <%- include('include/_navbar.ejs') %>
-
-<h3 class="cim text-secondary">Új Ital felvétele</h3>
-
-<div class="d-flex justify-content-center">
-  <div class="loginplace">
-    <div class="col-9 col-xl-6 col-md-10 m-auto">
-      <form action="/api/italok" method="POST" id="add_ital">
-        <div class="form-group">
-          <label for="name" class="form-label">Név</label>
-          <input type="hidden" name="id" class="form-control" value="" />
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>KUNPAO's COFFEE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <%- include('include/header_admin.ejs') %>
+      <div class="content_data">
+        <h2>Új italtermék felvétele</h2>
+        <form action="/api/italok" method="POST" id="add_ital" class="form">
+          <label for="name"> <span>Név</span> </label>
           <input
             type="text"
-            name="name"
-            class="form-control"
-            value=""
             placeholder="Add meg a termék nevét!"
+            name="name"
+            id="name"
+            required
           />
-        </div>
-        <div class="form-group">
-          <label for="kiszereles" class="text-default">Kiszerelés</label>
+
+          <label for="kiszereles"> <span>Kiszerelés</span> </label>
           <input
             type="text"
+            placeholder="Add meg a termék kiszerelését!"
             name="kiszereles"
-            class="form-control"
-            value=""
-            placeholder="Adj meg a termék kiszerelését!"
+            id="kiszereles"
+            required
           />
-        </div>
-        <div class="form-group">
-          <label for="price" class="text-default">Egységár</label>
+
+          <label for="price"> <span>Egységár</span> </label>
           <input
-            type="text"
+            type="number"
+            placeholder="Add meg a termék egységárát (forint nélkül)"
             name="price"
-            class="form-control"
-            value=""
-            placeholder="Add meg a termék egységárát (Ft nélkül)"
+            id="price"
+            required
           />
-        </div>
 
-        <div class="button">
-          <div class="row justify-content-center">
-            <button
-              type="submit"
-              class="btn btn-secondary btn-block col-7 col-md-5 create"
-            >
-              Mentés
-            </button>
-          </div>
-        </div>
-      </form>
+          <button id="button" type="submit">Mentés</button>
+        </form>
+      </div>
     </div>
-  </div>
-</div>
-
-<%- include('include/_footer.ejs') %>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
