@@ -21,15 +21,12 @@
               <tr>
                 <th>Név</th>
                 <th>Felhasználónév</th>
-                <th>@Email</th>
+                <th>Email</th>
                 <th>Jogosultság</th>
-                <th>Műveletek</th>
+                <th colspan="2">Műveletek</th>
               </tr>
             </thead>
-
-            <tbody>
-              <%- include('include/_show') %>
-            </tbody>
+            <tbody id="myTable"></tbody>
           </table>
         </div>
       </div>
@@ -39,7 +36,9 @@
       integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
       crossorigin="anonymous"
     ></script>
+
     <script src="/js/index.js"></script>
     <script src="/js/admin.js"></script>
+    <script type="module" src="/js/adminuj.js"></script>
   </body>
 </html>

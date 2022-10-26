@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/api/users")
+/*fetch("http://localhost:3000/api/users")
   .then((data) => data.json())
   .then((users) => {
     users.map((data) => {
@@ -30,7 +30,7 @@ function tadmin_function({ _id, name, username, email, role }) {
   return tr;
 }
 
-/* function delete_function(id) {
+ function delete_function(id) {
   var request = {
     url: `http://localhost:3000/api/users/${id}`,
     method: "DELETE",
