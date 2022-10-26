@@ -6,7 +6,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 const cors = require("cors");
-require("./config/passport")(passport);
+require("../config/passport")(passport);
 const path = require("path");
 require("dotenv").config({ path: "config.env" });
 const mongoose = require("mongoose");
@@ -42,9 +42,9 @@ app.use(passport.session());
 
 app.use(express.json());
 
-app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
-app.use("/img", express.static(path.resolve(__dirname, "assets/img")));
-app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
+app.use("/css", express.static(path.resolve(__dirname, "../assets/css")));
+app.use("/img", express.static(path.resolve(__dirname, "../assets/img")));
+app.use("/js", express.static(path.resolve(__dirname, "../assets/js")));
 
-app.use("/", require("./routes/admin_router"));
-app.use("/", require("./routes/alap_router"));
+app.use("/", require("../routes/admin_router"));
+app.use("/", require("../routes/alap_router"));
