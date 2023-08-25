@@ -18,19 +18,19 @@ exports.logout = (req, res) => {
 exports.loginpost = (req, res) => {
   passport.authenticate("local", function (err, user) {
     if (err) {
-      res.redirect("/login");
+      res.redirect("/users/login");
     } else {
       if (!user) {
-        res.redirect("/login");
+        res.redirect("/users/login");
       } else {
         req.login(user, function (err) {
           if (err) {
             res.redirect("/login");
           } else {
-            if (user.role == "Admin") {
+            if (user.role === "Admin") {
               res.redirect("/chief");
             }
-            if (user.role == "Alap") {
+            if (user.role === "Alap") {
               res.redirect("/tables");
             }
           }
